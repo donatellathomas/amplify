@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 791 1024" width="791" height="1024" role="img" aria-label="Stylized 3D bass guitar">
+  <title>Stylized bass guitar</title>
+  <rect width="791" height="1024" fill="#000000"/>
+  <image
+    href="bass-reference.png"
+    xlink:href="bass-reference.png"
+    width="791"
+    height="1024"
+    x="0"
+    y="0"
+    preserveAspectRatio="xMidYMid meet"
+  />
+</svg>

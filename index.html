@@ -4,51 +4,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260419elec" />
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
   </head>
   <body>
     <main class="page">
       <header class="top-nav">
-        <img
-          class="logo"
-          src="https://www.figma.com/api/mcp/asset/af723d5e-f90d-46a7-b424-998d94653e0b"
-          alt="Amplify"
-        />
+        <a href="./index.html">
+          <img
+            class="logo"
+            src="./assets/figma/amplify-logo.png"
+            alt="Amplify"
+          />
+        </a>
         <nav class="links" aria-label="Main navigation">
-          <a href="#" class="active">Bass</a>
+          <a href="./bass.html">Bass</a>
           <a href="#">Guitar</a>
           <a href="#">Drums</a>
           <a href="#">Keys</a>
         </nav>
         <img
           class="account"
-          src="https://www.figma.com/api/mcp/asset/2dc45ed8-83ce-4771-b8cd-06b4b44d79e2"
+          src="./assets/figma/account-icon.svg"
           alt="Account"
         />
       </header>
 
       <section class="hero panel">
-        <img
-          src="https://www.figma.com/api/mcp/asset/aad2d80e-6b36-453a-9519-43affe9995a5"
-          alt=""
-        />
+        <model-viewer
+          class="hero__model"
+          src="./assets/AmplifyLogo.glb"
+          alt="Amplify 3D logo"
+          orientation="0deg 85deg 0deg"
+          camera-orbit="0deg 75deg 105%"
+          min-camera-orbit="-Infinity 75deg 105%"
+          max-camera-orbit="Infinity 75deg 105%"
+          auto-rotate
+          auto-rotate-delay="0"
+          rotation-per-second="20deg"
+          shadow-intensity="0.22"
+          exposure="1.25"
+          environment-image="./assets/amplify-reflection-env.png"
+          tone-mapping="commerce"
+          interaction-prompt="none"
+        ></model-viewer>
+        <p class="hero__tagline">
+          Made by<br />
+          Musicians for Musicians
+        </p>
       </section>
 
-      <div class="divider"></div>
-
       <section class="gallery">
-        <article class="panel media">
-          <img
-            src="https://www.figma.com/api/mcp/asset/805762f8-6f2f-4a85-b238-e588b5fe7736"
-            alt="Drum"
-          />
-        </article>
-        <article class="panel media">
-          <img
-            src="https://www.figma.com/api/mcp/asset/e43487d6-c445-4d5b-b997-4a3c228f342b"
-            alt="Guitar"
-          />
-        </article>
+        <div class="gallery__cell gallery__cell--drum">
+          <article class="panel media media--drum">
+            <img
+              src="./assets/figma/drum-hero-ref.jpg"
+              alt="Stylized orange drum illustration"
+            />
+          </article>
+        </div>
+        <div class="gallery__cell gallery__cell--guitar">
+          <article class="panel media media--guitar">
+            <img
+              src="./assets/figma/guitar-hero-ref.jpg"
+              alt="Stylized green acoustic guitar illustration"
+            />
+          </article>
+        </div>
       </section>
 
       <section class="about">

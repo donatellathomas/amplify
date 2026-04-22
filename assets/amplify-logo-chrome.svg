@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 576" width="1024" height="576" role="img" aria-label="Amplify logo, chrome finish">
+  <title>Amplify</title>
+  <defs>
+    <!-- Chrome shine: specular passes on extrusion mask, blended over unchanged artwork -->
+    <filter id="chromeMetal" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.8" result="bump"/>
+
+      <!-- Tight hot highlights (mirror-like) -->
+      <feSpecularLighting in="bump" surfaceScale="7" specularConstant="1.35" specularExponent="55" lighting-color="#ffffff" result="hotSpec">
+        <feDistantLight azimuth="235" elevation="38"/>
+      </feSpecularLighting>
+      <feComposite in="hotSpec" in2="SourceAlpha" operator="in" result="hotMask"/>
+
+      <!-- Broad cool reflection (chrome environment read) -->
+      <feSpecularLighting in="bump" surfaceScale="4" specularConstant="0.85" specularExponent="28" lighting-color="#b8dcff" result="coolSpec">
+        <feDistantLight azimuth="55" elevation="52"/>
+      </feSpecularLighting>
+      <feComposite in="coolSpec" in2="SourceAlpha" operator="in" result="coolMask"/>
+
+      <!-- Rim / edge glint -->
+      <feSpecularLighting in="bump" surfaceScale="5" specularConstant="0.5" specularExponent="120" lighting-color="#f0f8ff" result="edgeSpec">
+        <fePointLight x="80" y="520" z="280"/>
+      </feSpecularLighting>
+      <feComposite in="edgeSpec" in2="SourceAlpha" operator="in" result="edgeMask"/>
+
+      <feBlend mode="screen" in="SourceGraphic" in2="coolMask" result="s1"/>
+      <feBlend mode="screen" in="s1" in2="hotMask" result="s2"/>
+      <feBlend mode="screen" in="s2" in2="edgeMask" result="shiny"/>
+
+      <!-- Micro-contrast for metallic snap (keeps composition; no resize) -->
+      <feColorMatrix in="shiny" type="matrix" values="
+        1.08 0 0 0 0.02
+        0 1.06 0 0 0.02
+        0 0 1.12 0 0.04
+        0 0 0 1 0" result="out"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="576" fill="#000000"/>
+  <image
+    href="amplify-logo-source.png"
+    xlink:href="amplify-logo-source.png"
+    width="1024"
+    height="576"
+    x="0"
+    y="0"
+    preserveAspectRatio="xMidYMid meet"
+    filter="url(#chromeMetal)"
+  />
+</svg>

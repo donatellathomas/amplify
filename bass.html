@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — Bass</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260419elec" />
+    <link rel="stylesheet" href="./styles.css?v=20260428sticky-nav" />
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
   </head>
-  <body>
+  <body class="bass-page">
     <main class="page">
       <header class="top-nav">
         <a href="./index.html">
@@ -19,9 +23,9 @@
         </a>
         <nav class="links" aria-label="Main navigation">
           <a href="./bass.html">Bass</a>
-          <a href="#">Guitar</a>
-          <a href="#">Drums</a>
-          <a href="#">Keys</a>
+          <a href="#" class="nav-link--guitar">Guitar</a>
+          <a href="#" class="nav-link--drums">Drums</a>
+          <a href="#" class="nav-link--keys">Keys</a>
         </nav>
         <img
           class="account"
@@ -30,59 +34,313 @@
         />
       </header>
 
-      <section class="bass-hero panel" aria-label="Featured bass guitar">
-        <div class="bass-hero__frame">
-          <img
-            class="bass-hero__img"
-            src="./assets/figma/bass-hero-ref.jpg"
-            alt="3D render of a neon blue electric bass guitar"
-          />
-        </div>
-      </section>
-
-      <div class="bass-thumb-row">
-        <div class="bass-thumb">
-          <div class="bass-thumb__axis">
+      <section class="bass-hero bass-hero--photo" aria-label="Featured bass artist">
+        <div class="bass-hero__media panel">
+          <div class="bass-hero__frame">
             <img
-              class="bass-thumb__img"
-              src="./assets/figma/Bass_Image.svg"
-              alt="Electric bass illustration"
+              class="bass-hero__img"
+              src="./assets/figma/james-jamerson-hero.png"
+              alt="Stylized halftone portrait of James Jamerson playing electric bass guitar"
+              aria-describedby="bass-hero-caption"
             />
           </div>
         </div>
-      </div>
-
-      <nav class="bass-types" aria-label="Bass categories">
-        <a href="./bass-electric.html">Electric</a>
-        <a href="#">Acoustic</a>
-        <a href="#">Double</a>
-        <a href="#">Fretless</a>
-      </nav>
-
-      <section class="bass-gradient panel" aria-hidden="true">
-        <img
-          class="bass-gradient__img"
-          src="./assets/figma/gradient-photo.png"
-          alt=""
-        />
-      </section>
-
-      <section class="about">
-        <h2>About</h2>
-        <p>
-          The bass guitar emerged in the early 1950s as a modern alternative to
-          the bulky upright bass, offering musicians greater portability and
-          amplified sound. In 1951, Leo Fender introduced the Fender Precision
-          Bass, the first mass-produced electric bass, which revolutionized
-          rhythm sections by allowing bassists to be heard clearly in louder
-          band settings. Throughout the 1960s and beyond, the instrument became
-          a cornerstone of rock, funk, and jazz, evolving in design and technique
-          as players pushed its role from simple accompaniment to a dynamic,
-          expressive voice in modern music.
+        <p id="bass-hero-caption" class="bass-hero__header">
+          James Jamerson January 1936-August 1983
         </p>
       </section>
 
-      <div class="divider"></div>
+      <nav class="bass-showcase" aria-label="Bass categories">
+        <model-viewer
+          class="bass-showcase__mv bass-showcase__mv--electric bass-page__model"
+          src="./assets/BassGuitar03.glb"
+          alt=""
+          tabindex="0"
+          role="link"
+          aria-label="Electric bass — open Electric bass models page"
+          orientation="0deg 90deg 0deg"
+          camera-orbit="0deg 75deg auto"
+          min-camera-orbit="-Infinity 75deg 70%"
+          max-camera-orbit="Infinity 75deg 140%"
+          auto-rotate
+          auto-rotate-delay="0"
+          rotation-per-second="26.325deg"
+          shadow-intensity="0.22"
+          exposure="1.15"
+          environment-image="./assets/bass-reflection-env.png"
+          tone-mapping="commerce"
+          interaction-prompt="none"
+        ></model-viewer>
+        <model-viewer
+          class="bass-showcase__mv bass-showcase__mv--acoustic bass-page__model"
+          src="./assets/AcousticBass.glb"
+          alt="Acoustic bass preview"
+          camera-orbit="0deg 75deg auto"
+          min-camera-orbit="-Infinity 75deg 70%"
+          max-camera-orbit="Infinity 75deg 140%"
+          auto-rotate
+          auto-rotate-delay="0"
+          rotation-per-second="26.325deg"
+          shadow-intensity="0.22"
+          exposure="1.15"
+          environment-image="./assets/bass-reflection-env.png"
+          tone-mapping="commerce"
+          interaction-prompt="none"
+        ></model-viewer>
+        <model-viewer
+          class="bass-showcase__mv bass-showcase__mv--double bass-page__model"
+          src="./assets/DoubleBass.glb"
+          alt="Double bass preview"
+          camera-orbit="0deg 75deg auto"
+          min-camera-orbit="-Infinity 75deg 70%"
+          max-camera-orbit="Infinity 75deg 140%"
+          auto-rotate
+          auto-rotate-delay="0"
+          rotation-per-second="26.325deg"
+          shadow-intensity="0.22"
+          exposure="1.15"
+          environment-image="./assets/bass-reflection-env.png"
+          tone-mapping="commerce"
+          interaction-prompt="none"
+        ></model-viewer>
+        <model-viewer
+          class="bass-showcase__mv bass-showcase__mv--fretless bass-page__model"
+          src="./assets/Fretless.glb"
+          alt="Fretless bass preview"
+          camera-orbit="0deg 75deg auto"
+          min-camera-orbit="-Infinity 75deg 70%"
+          max-camera-orbit="Infinity 75deg 140%"
+          auto-rotate
+          auto-rotate-delay="0"
+          rotation-per-second="26.325deg"
+          shadow-intensity="0.22"
+          exposure="1.15"
+          environment-image="./assets/bass-reflection-env.png"
+          tone-mapping="commerce"
+          interaction-prompt="none"
+        ></model-viewer>
+        <a class="bass-showcase__link bass-showcase__link--electric" href="./bass-electric.html">Electric</a>
+        <a class="bass-showcase__link bass-showcase__link--acoustic" href="#">Acoustic</a>
+        <a class="bass-showcase__link bass-showcase__link--double" href="#">Double</a>
+        <a class="bass-showcase__link bass-showcase__link--fretless" href="#">Fretless</a>
+      </nav>
+
+      <img
+        class="divider divider--bass-strip divider--bass-strip-before-history"
+        src="./assets/figma/DividerBar_Bass.png"
+        alt=""
+        width="1636"
+        height="59"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <section class="bass-history" aria-labelledby="bass-history-heading">
+        <h2 id="bass-history-heading" class="bass-history__heading">
+          History
+        </h2>
+        <div class="bass-history__layout">
+          <div class="bass-history__text">
+            <p>
+              The electric bass stepped out from the bulky upright—not as a
+              luxury, but as a response to cramped stages, louder ensembles, and
+              the sheer need for a low end musicians could amplify without losing
+              character. Makers and players had chased electrified uprights long
+              before mass production standardized the form—but it was approachable,
+              repeatable design that pushed the solid-body bass into every genre.
+            </p>
+            <p>
+              Leo Fender&apos;s blueprint from the early 1950s gave rhythm sections a
+              clear, stage-ready anchor: amplified low-end that stayed present in loud
+              rooms yet felt precise under the fingers—and that practical foundation
+              still supports rock, funk, jazz, soul, country, hip-hop, and whatever
+              line you write next.
+            </p>
+          </div>
+          <figure class="bass-history__figure">
+            <model-viewer
+              class="bass-history__model"
+              src="./assets/BassGuitar03.glb"
+              alt="Electric bass guitar model"
+              orientation="-88deg 3deg -90deg"
+              camera-orbit="18deg 78deg auto"
+              min-camera-orbit="-Infinity 45deg auto"
+              max-camera-orbit="Infinity 95deg auto"
+              exposure="1.15"
+              shadow-intensity="0.25"
+              environment-image="./assets/bass-reflection-env.png"
+              tone-mapping="commerce"
+              interaction-prompt="none"
+            ></model-viewer>
+          </figure>
+        </div>
+      </section>
+
+      <section class="bass-timeline panel" aria-labelledby="bass-timeline-heading">
+        <h2 id="bass-timeline-heading" class="bass-timeline__heading">
+          Timeline
+        </h2>
+        <div class="bass-timeline__strip">
+          <article class="timeline-mile timeline-mile--up">
+            <div class="timeline-mile__near">
+              <span class="timeline-mile__title">1900s — Upright tradition</span>
+              <p class="timeline-mile__text">
+                Used in orchestras and early jazz. Large, acoustic, and difficult to
+                transport.
+              </p>
+            </div>
+            <div class="timeline-mile__rail">
+              <span class="timeline-mile__dot"></span>
+            </div>
+            <div class="timeline-mile__far">
+              <figure class="timeline-mile__fig">
+                <img
+                  class="timeline-mile__img"
+                  src="./assets/timeline/timeline-1900s.png"
+                  alt=""
+                  width="520"
+                  height="320"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </article>
+
+          <article class="timeline-mile timeline-mile--down">
+            <div class="timeline-mile__near">
+              <span class="timeline-mile__title">1930s–40s — Early experiments</span>
+              <p class="timeline-mile__text">
+                Experimenting with electrified bass instruments. Paul Tutmarc invented
+                the Audiovox Model 736.
+              </p>
+            </div>
+            <div class="timeline-mile__rail">
+              <span class="timeline-mile__dot"></span>
+            </div>
+            <div class="timeline-mile__far">
+              <figure class="timeline-mile__fig">
+                <img
+                  class="timeline-mile__img"
+                  src="./assets/timeline/timeline-1930s.png"
+                  alt=""
+                  width="520"
+                  height="320"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </article>
+
+          <article class="timeline-mile timeline-mile--up">
+            <div class="timeline-mile__near">
+              <span class="timeline-mile__title">1951 — Precision era</span>
+              <p class="timeline-mile__text">
+                First mass produced electric bass (the P-Bass). Quickly adopted in rock,
+                country, and early pop.
+              </p>
+            </div>
+            <div class="timeline-mile__rail">
+              <span class="timeline-mile__dot"></span>
+            </div>
+            <div class="timeline-mile__far">
+              <figure class="timeline-mile__fig">
+                <img
+                  class="timeline-mile__img"
+                  src="./assets/timeline/timeline-1951.png"
+                  alt=""
+                  width="520"
+                  height="320"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </article>
+
+          <article class="timeline-mile timeline-mile--down">
+            <div class="timeline-mile__near">
+              <span class="timeline-mile__title">Late 50s–60s — On every stage</span>
+              <p class="timeline-mile__text">
+                Fender released Jazz Bass. Bass became essential across all music
+                genres.
+              </p>
+            </div>
+            <div class="timeline-mile__rail">
+              <span class="timeline-mile__dot"></span>
+            </div>
+            <div class="timeline-mile__far">
+              <figure class="timeline-mile__fig">
+                <img
+                  class="timeline-mile__img"
+                  src="./assets/timeline/timeline-late50s60s.png"
+                  alt=""
+                  width="520"
+                  height="320"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </article>
+
+          <article class="timeline-mile timeline-mile--up">
+            <div class="timeline-mile__near">
+              <span class="timeline-mile__title">1970s–80s — Tones diversify</span>
+              <p class="timeline-mile__text">
+                Powered pickups and active electronics. Musicians creating new
+                techniques.
+              </p>
+            </div>
+            <div class="timeline-mile__rail">
+              <span class="timeline-mile__dot"></span>
+            </div>
+            <div class="timeline-mile__far">
+              <figure class="timeline-mile__fig">
+                <img
+                  class="timeline-mile__img"
+                  src="./assets/timeline/timeline-1970s80s.png"
+                  alt=""
+                  width="520"
+                  height="320"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </article>
+
+          <article class="timeline-mile timeline-mile--down">
+            <div class="timeline-mile__near">
+              <span class="timeline-mile__title">1990s onward — Modern low end</span>
+              <p class="timeline-mile__text">
+                Integrating technology. Vast communities. New bass models.
+              </p>
+            </div>
+            <div class="timeline-mile__rail">
+              <span class="timeline-mile__dot"></span>
+            </div>
+            <div class="timeline-mile__far">
+              <figure class="timeline-mile__fig">
+                <img
+                  class="timeline-mile__img"
+                  src="./assets/timeline/timeline-1990s.png"
+                  alt=""
+                  width="520"
+                  height="320"
+                  loading="lazy"
+                />
+              </figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <img
+        class="divider divider--bass-strip"
+        src="./assets/figma/DividerBar_Bass.png"
+        alt=""
+        width="1636"
+        height="59"
+        loading="lazy"
+        decoding="async"
+      />
 
       <footer class="footer">
         <section>
@@ -137,5 +395,94 @@
         </section>
       </footer>
     </main>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="0"
+      height="0"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <filter
+          id="timeline-img-duotone"
+          color-interpolation-filters="sRGB"
+        >
+          <feColorMatrix
+            in="SourceGraphic"
+            type="matrix"
+            values="0.25 0.15 0.05 0 0  0.1 0.35 0.25 0 0  0.05 0.2 0.85 0 0  0 0 0 1 0"
+          />
+        </filter>
+      </defs>
+    </svg>
+    <script type="module">
+      const models = document.querySelectorAll(".bass-page__model");
+      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      function syncBassMv() {
+        for (const mv of models) {
+          if (!mv) continue;
+          if (mq.matches) {
+            mv.removeAttribute("auto-rotate");
+          } else {
+            mv.setAttribute("auto-rotate", "");
+          }
+        }
+      }
+
+      syncBassMv();
+      mq.addEventListener("change", syncBassMv);
+
+      const electricMv = document.querySelector(".bass-showcase__mv--electric");
+      const electricUrl = "./bass-electric.html";
+      /** Pointer movement beyond this skips navigation (orbit / drag). */
+      const clickMoveTolerancePx = 14;
+
+      if (electricMv) {
+        let activePointer = null;
+
+        electricMv.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            window.location.assign(electricUrl);
+          }
+        });
+
+        electricMv.addEventListener("pointerdown", (e) => {
+          if (e.button !== 0) return;
+          activePointer = {
+            id: e.pointerId,
+            x: e.clientX,
+            y: e.clientY,
+          };
+        });
+
+        electricMv.addEventListener("pointercancel", () => {
+          activePointer = null;
+        });
+
+        document.addEventListener(
+          "pointerup",
+          (e) => {
+            if (!activePointer || e.pointerId !== activePointer.id) return;
+            const start = activePointer;
+            activePointer = null;
+            if (e.button !== 0) return;
+            const dx = e.clientX - start.x;
+            const dy = e.clientY - start.y;
+            if (
+              dx * dx + dy * dy >
+              clickMoveTolerancePx * clickMoveTolerancePx
+            ) {
+              return;
+            }
+            if (!e.composedPath().includes(electricMv)) return;
+            window.location.assign(electricUrl);
+          },
+          true
+        );
+      }
+    </script>
+    <script src="./js/footer-message.js"></script>
   </body>
 </html>

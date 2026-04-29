@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — Electric Bass</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260419elec" />
+    <link rel="stylesheet" href="./styles.css?v=20260428electric-aside-noshadow" />
   </head>
-  <body>
+  <body class="electric-page">
     <main class="page">
       <header class="top-nav">
         <a href="./index.html">
@@ -19,9 +19,9 @@
         </a>
         <nav class="links" aria-label="Main navigation">
           <a href="./bass.html">Bass</a>
-          <a href="#">Guitar</a>
-          <a href="#">Drums</a>
-          <a href="#">Keys</a>
+          <a href="#" class="nav-link--guitar">Guitar</a>
+          <a href="#" class="nav-link--drums">Drums</a>
+          <a href="#" class="nav-link--keys">Keys</a>
         </nav>
         <img
           class="account"
@@ -30,79 +30,101 @@
         />
       </header>
 
-      <section class="bass-hero panel" aria-label="Electric bass">
-        <div class="bass-hero__frame">
+      <section
+        class="electric-hero electric-hero--figma panel"
+        aria-label="Featured electric bassist"
+      >
+        <div class="electric-hero__frame">
           <img
-            class="bass-hero__img"
-            src="./assets/figma/bass-hero-ref.jpg"
-            alt="3D render of a neon blue electric bass guitar"
+            class="electric-hero__img"
+            src="./assets/figma/electric-model/hero-base.png"
+            alt="Halftone illustration of bassist performing with electric bass"
+            width="1588"
+            height="623"
+            loading="eager"
+            decoding="async"
+            aria-describedby="electric-hero-caption"
           />
         </div>
-      </section>
-
-      <nav class="bass-types" aria-label="Bass categories">
-        <a href="./bass-electric.html" aria-current="page">Electric</a>
-        <a href="./bass.html">Acoustic</a>
-        <a href="./bass.html">Double</a>
-        <a href="./bass.html">Fretless</a>
-      </nav>
-
-      <section class="bass-model-about" aria-labelledby="electric-about-heading">
-        <h2 class="bass-model-about__title" id="electric-about-heading">
-          About
-        </h2>
-        <p class="bass-model-about__body">
-          The electric bass is the foundation of the modern rhythm section—built
-          to cut through a full band with clarity while locking in with drums and
-          harmony instruments. From Leo Fender’s first production instruments to
-          today’s multi-scale and active designs, builders have refined neck
-          profiles, pickup placement, and electronics so players can shape tone
-          from deep sub-bass to articulate midrange punch.
-        </p>
-        <p class="bass-model-about__body">
-          Solid-body electrics reward consistent setup: neck relief, string
-          height, and intonation work together so every fret speaks evenly.
-          Whether you prefer roundwounds for brightness or flats for thump,
-          matching string gauge to your nut and bridge keeps tension balanced
-          and reduces unnecessary wear on frets and hardware.
-        </p>
-        <p class="bass-model-about__body">
-          Amplify focuses on practical care—cleaning corrosion from jacks and
-          pots, shielding noisy cavities, and knowing when a fret dress or
-          electronics refresh will do more than a new set of strings alone.
-          Understanding your instrument makes it easier to play in tune, record
-          cleanly, and show up sounding like you every night.
+        <p id="electric-hero-caption" class="bass-hero__header">
+          Flea Red Hot Chili Peppers
         </p>
       </section>
 
       <section
-        class="bass-model-cards"
-        aria-label="Diagram and repair resources"
+        class="electric-intro"
+        aria-labelledby="electric-intro-heading"
       >
-        <article class="bass-model-card bass-model-card--diagram">
-          <div class="bass-model-card__frame" aria-hidden="true"></div>
-          <h3 class="bass-model-card__label">Diagram</h3>
-        </article>
-        <article class="bass-model-card bass-model-card--repair">
-          <div class="bass-model-card__frame">
-            <img
-              src="./assets/figma/SRModeal_Diagram_Bridge%201.svg"
-              alt="Technical diagram of a five-string bass bridge"
-            />
+        <h2 id="electric-intro-heading" class="electric-intro__title">
+          Electric Bass
+        </h2>
+        <div class="electric-intro__layout">
+          <div class="electric-intro__text">
+            <p class="electric-intro__lead">
+              Below you will find diagrams and repair options for a variety of
+              electric bass models. Don&apos;t see your model? Can&apos;t find the
+              solution to your repair need? Submit a request to our team!
+            </p>
           </div>
-          <h3 class="bass-model-card__label">Repair</h3>
-        </article>
+          <aside class="electric-intro__aside">
+            <div class="electric-intro__aside-frame">
+              <img
+                class="electric-intro__aside-img"
+                src="./assets/figma/electric-model/bass-insert-aside.png"
+                width="930"
+                height="442"
+                alt="Stylized halftone electric bass, diagonal in frame"
+              />
+            </div>
+          </aside>
+        </div>
       </section>
 
-      <section class="bass-gradient panel" aria-hidden="true">
-        <img
-          class="bass-gradient__img"
-          src="./assets/figma/gradient-photo.png"
-          alt=""
-        />
+      <section class="electric-detail panel" aria-label="Diagram and Repair">
+        <div class="electric-detail__grid">
+          <div class="electric-detail__col electric-detail__col--diagram">
+            <h2 class="electric-detail__heading">Diagram</h2>
+            <p class="electric-detail__body">
+              Diagrams visually map out the instrument in a clear, accessible way,
+              making it easier to understand note placement, scales, and chord
+              shapes across the fretboard. Instead of relying solely on
+              memorization, players can quickly reference a diagram to see how
+              patterns repeat and connect, which improves both learning speed and
+              accuracy.
+            </p>
+            <p class="electric-detail__body">
+              It&apos;s especially useful for beginners building foundational
+              knowledge, but even experienced players can use diagrams to explore
+              new techniques, alternate tunings, or more complex musical ideas with
+              confidence.
+            </p>
+          </div>
+          <div class="electric-detail__col electric-detail__col--repair">
+            <h2 class="electric-detail__heading">Repair</h2>
+            <p class="electric-detail__body">
+              Here you will find a variety of common and niche instrument problems a
+              musician will experience. Basic maintenance and repair skills—like
+              adjusting the truss rod, fixing loose hardware, or replacing worn
+              strings—can prevent small issues from turning into costly damage.
+            </p>
+            <p class="electric-detail__body">
+              At Amplify our goal is to make repairs less intimidating and expensive.
+              Come across a problem not addressed on our site? Submit the problem or
+              chat in the community forum with other musicians.
+            </p>
+          </div>
+        </div>
       </section>
 
-      <div class="divider"></div>
+      <img
+        class="divider divider--electric-page"
+        src="./assets/figma/DividerBar_Bass.png"
+        alt=""
+        width="1636"
+        height="59"
+        loading="lazy"
+        decoding="async"
+      />
 
       <footer class="footer">
         <section>
@@ -157,5 +179,6 @@
         </section>
       </footer>
     </main>
+    <script src="./js/footer-message.js"></script>
   </body>
 </html>

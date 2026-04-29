@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260419elec" />
+    <link rel="stylesheet" href="./styles.css?v=20260416restore" />
     <script
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
@@ -23,9 +23,9 @@
         </a>
         <nav class="links" aria-label="Main navigation">
           <a href="./bass.html">Bass</a>
-          <a href="#">Guitar</a>
-          <a href="#">Drums</a>
-          <a href="#">Keys</a>
+          <a href="#" class="nav-link--guitar">Guitar</a>
+          <a href="#" class="nav-link--drums">Drums</a>
+          <a href="#" class="nav-link--keys">Keys</a>
         </nav>
         <img
           class="account"
@@ -41,11 +41,8 @@
           alt="Amplify 3D logo"
           orientation="0deg 85deg 0deg"
           camera-orbit="0deg 75deg 105%"
-          min-camera-orbit="-Infinity 75deg 105%"
-          max-camera-orbit="Infinity 75deg 105%"
-          auto-rotate
-          auto-rotate-delay="0"
-          rotation-per-second="20deg"
+          min-camera-orbit="-Infinity 36deg 100%"
+          max-camera-orbit="Infinity 114deg 115%"
           shadow-intensity="0.22"
           exposure="1.25"
           environment-image="./assets/amplify-reflection-env.png"
@@ -59,42 +56,163 @@
       </section>
 
       <section class="gallery">
-        <div class="gallery__cell gallery__cell--drum">
+        <div class="gallery__cell">
+          <article class="panel media media--bass">
+            <model-viewer
+              class="media--bass__model"
+              src="./assets/BassGuitar03.glb"
+              alt="3D electric bass guitar"
+              orientation="0deg 90deg 0deg"
+              camera-orbit="0deg 75deg auto"
+              min-camera-orbit="-Infinity 75deg 70%"
+              max-camera-orbit="Infinity 75deg 140%"
+              auto-rotate
+              auto-rotate-delay="0"
+              rotation-per-second="26.325deg"
+              shadow-intensity="0.2"
+              exposure="1.2"
+              environment-image="./assets/bass-reflection-env.png"
+              tone-mapping="commerce"
+              interaction-prompt="none"
+            ></model-viewer>
+          </article>
+        </div>
+        <div class="gallery__cell">
           <article class="panel media media--drum">
-            <img
-              src="./assets/figma/drum-hero-ref.jpg"
-              alt="Stylized orange drum illustration"
-            />
+            <model-viewer
+              class="media--drum__model"
+              src="./assets/Drum02.glb"
+              alt="3D drum"
+              orientation="3deg 5deg 0deg"
+              camera-orbit="0deg 75deg auto"
+              min-camera-orbit="-Infinity 75deg 70%"
+              max-camera-orbit="Infinity 75deg 140%"
+              auto-rotate
+              auto-rotate-delay="0"
+              rotation-per-second="26.325deg"
+              shadow-intensity="0.2"
+              exposure="1.2"
+              environment-image="./assets/drum-reflection-env.png"
+              tone-mapping="commerce"
+              interaction-prompt="none"
+            ></model-viewer>
           </article>
         </div>
-        <div class="gallery__cell gallery__cell--guitar">
+        <div class="gallery__cell">
           <article class="panel media media--guitar">
-            <img
-              src="./assets/figma/guitar-hero-ref.jpg"
-              alt="Stylized green acoustic guitar illustration"
-            />
+            <model-viewer
+              class="media--guitar__model"
+              src="./assets/Guitar02.glb"
+              alt="3D acoustic guitar"
+              camera-orbit="0deg 75deg auto"
+              min-camera-orbit="-Infinity 75deg 70%"
+              max-camera-orbit="Infinity 75deg 140%"
+              auto-rotate
+              auto-rotate-delay="0"
+              rotation-per-second="26.325deg"
+              shadow-intensity="0.2"
+              exposure="1.2"
+              environment-image="./assets/guitar-reflection-env.png"
+              tone-mapping="commerce"
+              interaction-prompt="none"
+            ></model-viewer>
+          </article>
+        </div>
+        <div class="gallery__cell">
+          <article class="panel media media--keys">
+            <model-viewer
+              class="media--keys__model"
+              src="./assets/Keys.glb"
+              alt="3D keys"
+              camera-orbit="0deg 75deg auto"
+              min-camera-orbit="-Infinity 75deg 70%"
+              max-camera-orbit="Infinity 75deg 140%"
+              auto-rotate
+              auto-rotate-delay="0"
+              rotation-per-second="26.325deg"
+              shadow-intensity="0.2"
+              exposure="1.2"
+              environment-image="./assets/keys-reflection-env.png"
+              tone-mapping="commerce"
+              interaction-prompt="none"
+            ></model-viewer>
           </article>
         </div>
       </section>
 
-      <section class="about">
-        <h2>About</h2>
-        <p>
-          This project explores the development of affordable instrument care and
-          accessible music education. The brand aims to educate musicians about
-          maintenance through clear visual language, straightforward instructional
-          content, and cost-conscious solutions designed for musicians at every
-          level.
-        </p>
-        <p>
-          By combining education with practical resources, the project emphasizes
-          longevity, sustainability, and empowerment. Which in turn helps
-          musicians better understand, care for, and connect with their
-          instruments.
-        </p>
+      <img
+        class="divider divider--home-instruments"
+        src="./assets/figma/Mask group.png"
+        alt=""
+        width="1636"
+        height="59"
+        loading="lazy"
+        decoding="async"
+      />
+
+      <section class="about" aria-labelledby="about-heading">
+        <div class="about__layout">
+          <div class="about__col about__col--text">
+            <h2 id="about-heading">About</h2>
+            <p>
+              This project explores the development of affordable instrument care and
+              accessible music education. The brand aims to educate musicians about
+              maintenance through clear visual language, straightforward instructional
+              content, and cost-conscious solutions designed for musicians at every
+              level.
+            </p>
+            <p>
+              By combining education with practical resources, the project emphasizes
+              longevity, sustainability, and empowerment. Which in turn helps
+              musicians better understand, care for, and connect with their
+              instruments.
+            </p>
+          </div>
+          <div class="about__col about__col--cross">
+            <div class="about-cross">
+              <model-viewer
+                class="about-cross__mv about-cross__mv--bass"
+                src="./assets/BassGuitar03.glb"
+                alt="Electric bass guitar"
+                tabindex="-1"
+                orientation="0deg 90deg 0deg"
+                camera-orbit="12deg 88deg 112%"
+                min-camera-orbit="12deg 88deg 112%"
+                max-camera-orbit="12deg 88deg 112%"
+                shadow-intensity="0.2"
+                exposure="1.2"
+                environment-image="./assets/bass-reflection-env.png"
+                tone-mapping="commerce"
+                interaction-prompt="none"
+              ></model-viewer>
+              <model-viewer
+                class="about-cross__mv about-cross__mv--guitar"
+                src="./assets/Guitar02.glb"
+                alt="Acoustic guitar"
+                tabindex="-1"
+                camera-orbit="-16deg 90deg 110%"
+                min-camera-orbit="-16deg 90deg 110%"
+                max-camera-orbit="-16deg 90deg 110%"
+                shadow-intensity="0.2"
+                exposure="1.2"
+                environment-image="./assets/guitar-reflection-env.png"
+                tone-mapping="commerce"
+                interaction-prompt="none"
+              ></model-viewer>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <div class="divider"></div>
+      <img
+        class="divider divider--home-after-about"
+        src="./assets/figma/Mask group.png"
+        alt=""
+        width="1636"
+        height="59"
+        loading="lazy"
+        decoding="async"
+      />
 
       <footer class="footer">
         <section>
@@ -102,7 +220,12 @@
           <p>amplify@gmail.com</p>
           <p>123-456-7890</p>
           <p>Message:</p>
-          <div class="message-box" aria-hidden="true"></div>
+          <textarea
+            class="footer__message"
+            name="message"
+            rows="5"
+            placeholder="Type your message here..."
+          ></textarea>
         </section>
         <section>
           <h3>Bass</h3>
@@ -144,5 +267,26 @@
         </section>
       </footer>
     </main>
+    <script type="module" src="./js/hero-model.mjs?v=20260416restore"></script>
+    <script type="module">
+      const guitar = document.querySelector(".media--guitar__model");
+      const drum = document.querySelector(".media--drum__model");
+      const keys = document.querySelector(".media--keys__model");
+      const bass = document.querySelector(".media--bass__model");
+      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+      function syncGallerySpin() {
+        for (const mv of [guitar, drum, bass, keys]) {
+          if (!mv) continue;
+          if (mq.matches) {
+            mv.removeAttribute("auto-rotate");
+          } else {
+            mv.setAttribute("auto-rotate", "");
+          }
+        }
+      }
+      syncGallerySpin();
+      mq.addEventListener("change", syncGallerySpin);
+    </script>
+    <script src="./js/footer-message.js"></script>
   </body>
 </html>

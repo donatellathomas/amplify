@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — Electric Bass Diagrams</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260416diagram-no-illo-list-type" />
+    <link rel="stylesheet" href="./styles.css?v=20260430ibanez-light-hires" />
   </head>
   <body class="electric-diagram-page">
     <main class="page">
@@ -126,34 +126,42 @@
           </header>
           <div class="electric-diagram-models__list-shell">
             <ul class="electric-repair-modal__list" id="electric-diagram-models-list">
-              <li data-model-name="fender precision bass">
+              <li data-model-name="fender precision bass" data-brand="fender">
                 <a href="#">Fender Precision Bass</a>
               </li>
-              <li data-model-name="fender jazz bass">
+              <li data-model-name="fender jazz bass" data-brand="fender">
                 <a href="#">Fender Jazz Bass</a>
               </li>
-              <li data-model-name="music man stingray">
+              <li data-model-name="music man stingray" data-brand="music-man">
                 <a href="#">Music Man StingRay</a>
               </li>
-              <li data-model-name="rickenbacker 4001">
+              <li data-model-name="rickenbacker 4001" data-brand="rickenbacker">
                 <a href="#">Rickenbacker 4001</a>
               </li>
-              <li data-model-name="gibson eb-3">
+              <li data-model-name="gibson eb-3" data-brand="gibson">
                 <a href="#">Gibson EB-3</a>
               </li>
-              <li data-model-name="ibanez iv1sr">
-                <a href="#">Ibanez IV1SR</a>
+              <li data-model-name="ibanez iv1sr" data-brand="ibanez">
+                <a href="./bass-electric-diagram-ibanez-iv1sr.html"
+                  >Ibanez IV1SR</a
+                >
               </li>
-              <li data-model-name="yamaha trbx504">
+              <li data-model-name="yamaha trbx504" data-brand="yamaha">
                 <a href="#">Yamaha TRBX504</a>
               </li>
-              <li data-model-name="warwick thumb bass">
+              <li data-model-name="warwick thumb bass" data-brand="warwick">
                 <a href="#">Warwick Thumb Bass</a>
               </li>
-              <li data-model-name="squier classic vibe '60s jazz bass">
+              <li
+                data-model-name="squier classic vibe '60s jazz bass"
+                data-brand="squier"
+              >
                 <a href="#">Squier Classic Vibe '60s Jazz Bass</a>
               </li>
-              <li data-model-name="höfner 500/1 violin bass">
+              <li
+                data-model-name="höfner 500/1 violin bass"
+                data-brand="hofner"
+              >
                 <a href="#">Höfner 500/1 Violin Bass</a>
               </li>
             </ul>
@@ -178,20 +186,129 @@
                   aria-label="Search models"
                 />
               </label>
-              <button
-                type="button"
-                class="electric-repair-modal__icon-btn"
-                aria-label="Filter (coming soon)"
-                disabled
-              >
-                <img
-                  src="./assets/electric-repair/filter-icon.svg"
-                  alt=""
-                  width="22"
-                  height="22"
-                  decoding="async"
-                />
-              </button>
+              <div class="electric-repair-modal__filter-dropdown">
+                <button
+                  type="button"
+                  id="diagram-filter-trigger"
+                  class="electric-repair-modal__icon-btn electric-repair-modal__filter-trigger"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-controls="diagram-filter-popover"
+                  aria-label="Filter by brand"
+                >
+                  <img
+                    src="./assets/electric-repair/filter-icon.svg"
+                    alt=""
+                    width="22"
+                    height="22"
+                    decoding="async"
+                  />
+                </button>
+                <div
+                  id="diagram-filter-popover"
+                  class="electric-repair-modal__filter-popover"
+                  role="menu"
+                  aria-labelledby="diagram-filter-label"
+                  hidden
+                >
+                  <p
+                    id="diagram-filter-label"
+                    class="electric-repair-modal__filter-heading"
+                  >
+                    Brand
+                  </p>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="true"
+                    class="electric-repair-modal__filter-option is-selected"
+                    data-diagram-brand="all"
+                  >
+                    All brands
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-diagram-brand="fender"
+                  >
+                    Fender
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-diagram-brand="music-man"
+                  >
+                    Music Man
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-diagram-brand="rickenbacker"
+                  >
+                    Rickenbacker
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-diagram-brand="gibson"
+                  >
+                    Gibson
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-diagram-brand="ibanez"
+                  >
+                    Ibanez
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-diagram-brand="yamaha"
+                  >
+                    Yamaha
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-diagram-brand="warwick"
+                  >
+                    Warwick
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-diagram-brand="squier"
+                  >
+                    Squier
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-diagram-brand="hofner"
+                  >
+                    Hofner
+                  </button>
+                </div>
+              </div>
               <button
                 type="button"
                 class="electric-repair-modal__icon-btn"
@@ -318,7 +435,7 @@
         </section>
       </footer>
     </main>
-    <script src="./js/electric-diagram-models.js?v=20260416diagram-no-illo-list-type"></script>
+    <script src="./js/electric-diagram-models.js?v=20260416diagram-brand-filter"></script>
     <script src="./js/nav-instruments-dropdown.js"></script>
     <script src="./js/no-widows.js"></script>
     <script src="./js/footer-message.js"></script>

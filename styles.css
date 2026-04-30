@@ -525,9 +525,7 @@ a.nav-flyout__hit {
 /* Home: simple horizontal rules (hero → gallery, gallery → footer) */
 .divider.divider--home-after-hero,
 .divider.divider--home-instruments,
-.divider.divider--bass-strip,
-.divider.divider--electric-after-hero,
-.divider.divider--electric-after-intro {
+.divider.divider--bass-strip {
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -543,14 +541,6 @@ a.nav-flyout__hit {
 
 .divider.divider--home-after-hero {
   margin: clamp(18px, 3.5vw, 40px) 0 clamp(20px, 3.8vw, 44px);
-}
-
-.divider.divider--electric-after-hero {
-  margin: clamp(18px, 3.5vw, 40px) 0 clamp(20px, 3.8vw, 44px);
-}
-
-.divider.divider--electric-after-intro {
-  margin: clamp(14px, 2.8vw, 28px) 0 clamp(22px, 4vw, 40px);
 }
 
 .divider.divider--home-instruments {
@@ -701,14 +691,16 @@ a.nav-flyout__hit {
 }
 
 body.bass-page .bass-hero.bass-hero--photo,
-body.bass-page .bass-hero.bass-hero--video {
+body.bass-page .bass-hero.bass-hero--video,
+body.electric-page .bass-hero.bass-hero--video {
   overflow: visible;
   background: transparent;
   border-radius: 0;
 }
 
 body.bass-page .bass-hero--photo .bass-hero__media,
-body.bass-page .bass-hero--video .bass-hero__media {
+body.bass-page .bass-hero--video .bass-hero__media,
+body.electric-page .bass-hero--video .bass-hero__media {
   overflow: hidden;
   background: #000;
   border-radius: 50px;
@@ -719,14 +711,16 @@ body.bass-page .bass-hero--photo .bass-hero__img {
   transform: none;
 }
 
-body.bass-page .bass-hero--video .bass-hero__frame--video {
+body.bass-page .bass-hero--video .bass-hero__frame--video,
+body.electric-page .bass-hero--video .bass-hero__frame--video {
   position: relative;
   aspect-ratio: 1588 / 623;
   max-height: min(623px, 70vh);
   overflow: hidden;
 }
 
-body.bass-page .bass-hero--video .bass-hero__video {
+body.bass-page .bass-hero--video .bass-hero__video,
+body.electric-page .bass-hero--video .bass-hero__video {
   display: block;
   position: absolute;
   inset: 0;
@@ -737,7 +731,8 @@ body.bass-page .bass-hero--video .bass-hero__video {
   pointer-events: none;
 }
 
-body.bass-page .bass-hero--video .bass-hero__title {
+body.bass-page .bass-hero--video .bass-hero__title,
+body.electric-page .bass-hero--video .bass-hero__title {
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1129,65 +1124,6 @@ body.electric-page {
   overscroll-behavior-x: none;
 }
 
-body.electric-page .electric-hero.electric-hero--video {
-  position: relative;
-  overflow: visible;
-  background: transparent;
-  border-radius: 0;
-}
-
-body.electric-page .electric-hero--video .electric-hero__sr-title {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-body.electric-page .electric-hero--video .electric-hero__media {
-  overflow: hidden;
-  background: #121212;
-  border-radius: 50px;
-}
-
-body.electric-page .electric-hero--video .electric-hero__frame--video {
-  position: relative;
-  aspect-ratio: 1588 / 623;
-  max-height: min(623px, 70vh);
-  overflow: hidden;
-  border-radius: 50px;
-  background: #121212;
-}
-
-body.electric-page .electric-hero--video .electric-hero__mask-defs {
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
-body.electric-page .electric-hero--video .electric-hero__video {
-  display: block;
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  pointer-events: none;
-  mask-image: url("#electric-hero-video-mask");
-  -webkit-mask-image: url("#electric-hero-video-mask");
-  mask-size: 100% 100%;
-  -webkit-mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-  -webkit-mask-repeat: no-repeat;
-  mask-position: center;
-  -webkit-mask-position: center;
-}
-
 .electric-intro {
   margin-top: clamp(36px, 7vw, 88px);
   padding: 0 clamp(20px, 5vw, 72px);
@@ -1276,15 +1212,12 @@ body.electric-page .electric-intro__model {
 /* Electric: intro band — rows hug content (no 1fr stretch / tall min-height). */
 body.electric-page .electric-intro-band {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto;
   align-items: center;
   min-height: 0;
+  margin-top: clamp(18px, 3.5vw, 40px);
   gap: clamp(2px, 0.55vw, 8px);
   overflow: visible;
-}
-
-body.electric-page .electric-intro-band > .divider.divider--electric-after-hero {
-  margin: clamp(4px, 1vw, 10px) 0 clamp(4px, 1vw, 8px);
 }
 
 body.electric-page .electric-intro-band > .divider.divider--electric-after-intro {
@@ -1303,11 +1236,6 @@ body.electric-page .electric-intro-band .electric-intro {
 @media (max-width: 700px) {
   body.electric-page .electric-intro-band {
     gap: clamp(2px, 0.8vw, 6px);
-  }
-
-  body.electric-page .electric-intro-band > .divider.divider--electric-after-hero {
-    margin-top: clamp(4px, 1.5vw, 8px);
-    margin-bottom: clamp(3px, 1.2vw, 6px);
   }
 
   body.electric-page .electric-intro-band > .divider.divider--electric-after-intro {
@@ -1432,10 +1360,11 @@ body.electric-page .electric-detail__heading {
     border-color 0.2s ease;
 }
 
-body.electric-page .electric-detail__heading:hover {
-  background: var(--timeline-navy);
-  color: #00f0ff;
-  border-color: var(--timeline-navy);
+body.electric-page .electric-detail__heading:hover,
+body.electric-page .electric-detail__heading:focus-visible {
+  background: var(--bg);
+  color: var(--accent);
+  border-color: var(--bg);
 }
 
 button.electric-detail__heading {
@@ -1447,7 +1376,7 @@ button.electric-detail__heading {
 }
 
 button.electric-detail__heading:focus-visible {
-  outline: 2px solid var(--timeline-navy);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -1456,7 +1385,7 @@ a.electric-detail__heading {
 }
 
 a.electric-detail__heading:focus-visible {
-  outline: 2px solid var(--timeline-navy);
+  outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
 
@@ -1690,12 +1619,14 @@ body.electric-diagram-page .electric-repair-modal__title {
   text-align: left;
 }
 
-body.electric-repairs-page .electric-repair-modal__filter-dropdown {
+body.electric-repairs-page .electric-repair-modal__filter-dropdown,
+body.electric-diagram-page .electric-repair-modal__filter-dropdown {
   position: relative;
   flex-shrink: 0;
 }
 
-body.electric-repairs-page .electric-repair-modal__filter-popover {
+body.electric-repairs-page .electric-repair-modal__filter-popover,
+body.electric-diagram-page .electric-repair-modal__filter-popover {
   position: absolute;
   top: calc(100% + 6px);
   right: 0;
@@ -1710,7 +1641,8 @@ body.electric-repairs-page .electric-repair-modal__filter-popover {
   box-sizing: border-box;
 }
 
-body.electric-repairs-page .electric-repair-modal__filter-heading {
+body.electric-repairs-page .electric-repair-modal__filter-heading,
+body.electric-diagram-page .electric-repair-modal__filter-heading {
   margin: 0 14px 8px;
   padding: 0;
   font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
@@ -1721,7 +1653,8 @@ body.electric-repairs-page .electric-repair-modal__filter-heading {
   color: rgba(237, 237, 237, 0.72);
 }
 
-body.electric-repairs-page .electric-repair-modal__filter-option {
+body.electric-repairs-page .electric-repair-modal__filter-option,
+body.electric-diagram-page .electric-repair-modal__filter-option {
   display: block;
   width: 100%;
   margin: 0;
@@ -1739,22 +1672,26 @@ body.electric-repairs-page .electric-repair-modal__filter-option {
   box-sizing: border-box;
 }
 
-body.electric-repairs-page .electric-repair-modal__filter-option:hover {
+body.electric-repairs-page .electric-repair-modal__filter-option:hover,
+body.electric-diagram-page .electric-repair-modal__filter-option:hover {
   background: rgba(237, 237, 237, 0.06);
   color: #ffffff;
 }
 
-body.electric-repairs-page .electric-repair-modal__filter-option:focus-visible {
+body.electric-repairs-page .electric-repair-modal__filter-option:focus-visible,
+body.electric-diagram-page .electric-repair-modal__filter-option:focus-visible {
   outline: 2px solid #ededed;
   outline-offset: -2px;
   color: #ffffff;
 }
 
-body.electric-repairs-page .electric-repair-modal__filter-option.is-selected {
+body.electric-repairs-page .electric-repair-modal__filter-option.is-selected,
+body.electric-diagram-page .electric-repair-modal__filter-option.is-selected {
   color: #00f0ff;
 }
 
-body.electric-repairs-page .electric-repair-modal__filter-trigger.is-active {
+body.electric-repairs-page .electric-repair-modal__filter-trigger.is-active,
+body.electric-diagram-page .electric-repair-modal__filter-trigger.is-active {
   color: #00f0ff;
   border-radius: 8px;
   outline: 1px solid rgba(0, 240, 255, 0.45);
@@ -1859,6 +1796,167 @@ body.electric-diagram-page .electric-repair-modal__icon-btn img {
 body.electric-diagram-page .electric-repair-modal__icon-btn:disabled {
   opacity: 0.35;
   cursor: not-allowed;
+}
+
+/* Diagram model detail — single reference sheet (e.g. Ibanez IV1SR) */
+.diagram-model-detail {
+  padding: clamp(8px, 1.5vw, 20px) 0 clamp(40px, 6vw, 72px);
+}
+
+.diagram-model-detail__intro {
+  padding-inline: clamp(20px, 5vw, 72px);
+}
+
+.diagram-model-detail__back-wrap {
+  margin: 0 0 clamp(10px, 1.5vw, 16px);
+}
+
+.diagram-model-detail__back {
+  font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: var(--heading-space);
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.diagram-model-detail__back:hover,
+.diagram-model-detail__back:focus-visible {
+  color: #ffffff;
+}
+
+.diagram-model-detail__title {
+  margin: 0;
+  font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: clamp(22px, 3vw, 32px);
+  letter-spacing: var(--heading-space);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.diagram-model-detail__subtitle {
+  margin: 0.35em 0 0;
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: var(--muted);
+}
+
+.diagram-model-detail__viewer {
+  padding-inline: clamp(12px, 3vw, 32px);
+}
+
+.diagram-model-detail__toggle-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 2vw, 18px);
+  margin-top: clamp(8px, 1.5vw, 16px);
+}
+
+.diagram-model-detail__toggle-caption {
+  font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: 500;
+  letter-spacing: var(--heading-space);
+  color: rgba(237, 237, 237, 0.5);
+  transition: color 0.2s ease;
+}
+
+.diagram-model-detail__viewer:not(:has(.diagram-model-detail__toggle-input:checked))
+  .diagram-model-detail__toggle-caption--left {
+  color: var(--accent);
+}
+
+.diagram-model-detail__viewer:has(.diagram-model-detail__toggle-input:checked)
+  .diagram-model-detail__toggle-caption--right {
+  color: var(--accent);
+}
+
+.diagram-model-detail__switch {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.diagram-model-detail__switch-track {
+  position: relative;
+  display: block;
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(237, 237, 237, 0.1);
+  border: 1px solid rgba(237, 237, 237, 0.28);
+  box-sizing: border-box;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.diagram-model-detail__switch-thumb {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #ededed;
+  transform: translateY(-50%);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.diagram-model-detail__viewer:has(.diagram-model-detail__toggle-input:checked)
+  .diagram-model-detail__switch-thumb {
+  transform: translate(24px, -50%);
+  background: var(--accent);
+}
+
+.diagram-model-detail__viewer:has(.diagram-model-detail__toggle-input:checked)
+  .diagram-model-detail__switch-track {
+  border-color: rgba(0, 240, 255, 0.55);
+  background: rgba(0, 240, 255, 0.14);
+}
+
+.diagram-model-detail__switch:has(.diagram-model-detail__toggle-input:focus-visible)
+  .diagram-model-detail__switch-track {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.diagram-model-detail__figure {
+  margin: clamp(16px, 2.5vw, 28px) 0 0;
+  padding: 0;
+}
+
+.diagram-model-detail__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* High-res blueprint — cap ~½ native width for Retina clarity */
+.diagram-model-detail__img--blueprint {
+  max-width: min(1275px, 100%);
+}
+
+/* Light diagram — same intrinsic size as dark (2550×3300); same display cap for matched sharpness */
+.diagram-model-detail__img--day {
+  display: none;
+  max-width: min(1275px, 100%);
+}
+
+.diagram-model-detail__viewer:has(.diagram-model-detail__toggle-input:checked)
+  .diagram-model-detail__img--blueprint {
+  display: none;
+}
+
+.diagram-model-detail__viewer:has(.diagram-model-detail__toggle-input:checked)
+  .diagram-model-detail__img--day {
+  display: block;
 }
 
 .electric-repairs-cta {
@@ -2783,7 +2881,6 @@ h2 {
   .divider.divider--home-after-hero,
   .divider.divider--home-instruments,
   .divider.divider--bass-strip,
-  .divider.divider--electric-after-hero,
   .divider.divider--electric-after-intro {
     height: 2px;
     margin-left: auto;
@@ -2793,11 +2890,6 @@ h2 {
   }
 
   .divider.divider--home-after-hero {
-    margin-top: clamp(14px, 3vw, 28px);
-    margin-bottom: clamp(16px, 3.2vw, 32px);
-  }
-
-  .divider.divider--electric-after-hero {
     margin-top: clamp(14px, 3vw, 28px);
     margin-bottom: clamp(16px, 3.2vw, 32px);
   }

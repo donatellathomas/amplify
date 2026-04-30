@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — Electric Bass</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260416electric-diagram-nav" />
+    <link rel="stylesheet" href="./styles.css?v=20260430electric-no-intro-divider" />
     <script
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
@@ -113,52 +113,11 @@
         </div>
       </header>
 
-      <section
-        class="electric-hero electric-hero--video"
-        aria-labelledby="electric-hero-heading"
-      >
-        <h1 id="electric-hero-heading" class="electric-hero__sr-title">
-          The Electric
-        </h1>
-        <div class="electric-hero__media panel">
-          <div class="electric-hero__frame electric-hero__frame--video">
-            <svg
-              class="electric-hero__mask-defs"
-              aria-hidden="true"
-              focusable="false"
-              width="0"
-              height="0"
-            >
-              <defs>
-                <mask
-                  id="electric-hero-video-mask"
-                  maskUnits="objectBoundingBox"
-                  maskContentUnits="objectBoundingBox"
-                >
-                  <rect width="1" height="1" fill="black" />
-                  <!-- Uniform glyph proportions: bbox maps to a wide rect; scale X by H/W (~623/1588). -->
-                  <g
-                    transform="translate(0.5, 0.52) scale(0.392316, 1) translate(-0.5, -0.52)"
-                  >
-                    <text
-                      x="0.5"
-                      y="0.52"
-                      fill="white"
-                      text-anchor="middle"
-                      dominant-baseline="middle"
-                      font-family="Record Laser, Georgia, serif"
-                      font-weight="700"
-                      font-style="italic"
-                      font-size="0.2"
-                    >
-                      The Electric
-                    </text>
-                  </g>
-                </mask>
-              </defs>
-            </svg>
+      <section class="bass-hero bass-hero--video" aria-label="Electric bass">
+        <div class="bass-hero__media panel">
+          <div class="bass-hero__frame bass-hero__frame--video">
             <video
-              class="electric-hero__video"
+              class="bass-hero__video"
               src="./assets/moving-mesh-bass.mp4"
               autoplay
               loop
@@ -167,15 +126,14 @@
               preload="auto"
               disablepictureinpicture
               disableremoteplayback
-              aria-hidden="true"
+              aria-label="Animated mesh gradient"
             ></video>
+            <h1 class="bass-hero__title">The Electric Bass</h1>
           </div>
         </div>
       </section>
 
       <div class="electric-intro-band">
-        <hr class="divider divider--electric-after-hero" aria-hidden="true" />
-
         <section class="electric-intro" aria-label="Introduction">
           <div class="electric-intro__layout">
             <div class="electric-intro__text">
@@ -203,8 +161,6 @@
             </figure>
           </div>
         </section>
-
-        <hr class="divider divider--electric-after-intro" aria-hidden="true" />
       </div>
 
       <section
@@ -227,7 +183,12 @@
         </div>
         <div class="electric-detail__grid">
           <div class="electric-detail__col electric-detail__col--diagram">
-            <h2 class="electric-detail__heading">Diagram</h2>
+            <a
+              class="electric-detail__heading electric-detail__heading--diagram"
+              href="./bass-electric-diagram.html"
+            >
+              Diagram
+            </a>
           </div>
           <div class="electric-detail__col electric-detail__col--repair">
             <a
@@ -300,7 +261,7 @@
       </footer>
     </main>
     <script type="module">
-      const heroVideo = document.querySelector(".electric-hero__video");
+      const heroVideo = document.querySelector(".bass-hero__video");
       const detailMeshVideo = document.querySelector(
         ".electric-detail__mesh-video"
       );

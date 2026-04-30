@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — String Change</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260430repair-string-change-video" />
+    <link rel="stylesheet" href="./styles.css?v=20260430repair-detail-type-toolbar" />
   </head>
   <body class="repair-detail-page">
     <main class="page">
@@ -112,25 +112,56 @@
       <article class="repair-detail">
         <header class="repair-detail__hero">
           <div class="repair-detail__video-shell">
-            <video
-              class="repair-detail__video"
-              controls
-              playsinline
-              preload="metadata"
-              poster="./assets/repairs/string-change/video-poster-web.jpg"
-              aria-label="String change tutorial video"
-            >
-              <source
-                src="./assets/repairs/string-change/StringChangeTutorial.mov"
-                type="video/quicktime"
-              />
-              <p class="repair-detail__video-fallback">
-                Video not supported in this browser.
-                <a href="./assets/repairs/string-change/StringChangeTutorial.mov"
-                  >Download the tutorial</a
-                >.
-              </p>
-            </video>
+            <div class="repair-detail__video-frame">
+              <video
+                id="repair-detail-video"
+                class="repair-detail__video"
+                controls
+                playsinline
+                preload="auto"
+                aria-label="String change tutorial video"
+              >
+                <source
+                  src="./assets/repairs/string-change/StringChangeTutorial.mp4"
+                  type="video/mp4"
+                />
+                <source
+                  src="./assets/repairs/string-change/StringChangeTutorial.mov"
+                  type="video/quicktime"
+                />
+                <p class="repair-detail__video-fallback">
+                  Video not supported in this browser.
+                  <a href="./assets/repairs/string-change/StringChangeTutorial.mp4"
+                    >Download the tutorial</a
+                  >.
+                </p>
+              </video>
+              <button
+                type="button"
+                class="repair-detail__big-play"
+                id="repair-detail-play-btn"
+                aria-label="Play tutorial video"
+              >
+                <svg
+                  class="repair-detail__big-play-icon"
+                  width="140"
+                  height="140"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    paint-order="stroke fill"
+                    fill="currentColor"
+                    stroke="currentColor"
+                    stroke-width="1.85"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                    d="M8.45 5.85 L8.45 18.15 L18.25 12 Z"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
           <div class="repair-detail__meta">
             <div class="repair-detail__titles">
@@ -145,15 +176,6 @@
               role="toolbar"
               aria-label="Article feedback"
             >
-              <button type="button" class="repair-detail__tool" aria-label="Like">
-                <img
-                  src="./assets/repairs/string-change/icon-like.svg"
-                  alt=""
-                  width="56"
-                  height="56"
-                  decoding="async"
-                />
-              </button>
               <button
                 type="button"
                 class="repair-detail__tool"
@@ -180,15 +202,6 @@
                   decoding="async"
                 />
               </button>
-              <button type="button" class="repair-detail__tool" aria-label="Save">
-                <img
-                  src="./assets/repairs/string-change/icon-save.svg"
-                  alt=""
-                  width="56"
-                  height="56"
-                  decoding="async"
-                />
-              </button>
               <button type="button" class="repair-detail__tool" aria-label="Share">
                 <img
                   src="./assets/repairs/string-change/icon-share.svg"
@@ -207,14 +220,6 @@
             <h2 id="repair-parts-heading" class="repair-parts__heading">
               Parts Needed
             </h2>
-            <img
-              class="repair-parts__divider"
-              src="./assets/repairs/string-change/divider-line.svg"
-              alt=""
-              width="1044"
-              height="12"
-              decoding="async"
-            />
             <ul class="repair-parts__grid">
               <li class="repair-parts__card">
                 <div class="repair-parts__img-wrap">
@@ -243,12 +248,14 @@
                 <p class="repair-parts__price-row">$5.39</p>
               </li>
               <li class="repair-parts__card">
-                <div class="repair-parts__img-wrap">
+                <div
+                  class="repair-parts__img-wrap repair-parts__img-wrap--strings"
+                >
                   <img
-                    src="./assets/repairs/string-change/strings.jpg"
-                    alt="D’Addario bass strings"
-                    width="440"
-                    height="440"
+                    src="./assets/repairs/string-change/strings-product.png"
+                    alt="D’Addario XL nickel wound bass strings, long scale"
+                    width="662"
+                    height="606"
                     decoding="async"
                   />
                 </div>
@@ -326,5 +333,6 @@
     <script src="./js/nav-instruments-dropdown.js"></script>
     <script src="./js/no-widows.js"></script>
     <script src="./js/footer-message.js"></script>
+    <script src="./js/repair-detail-video.js?v=20260430repair-play-soft-round"></script>
   </body>
 </html>

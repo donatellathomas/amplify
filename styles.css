@@ -956,11 +956,29 @@ body.bass-page .bass-hero--photo .bass-hero__header {
   transform-origin: center center;
 }
 
+/* Accent strips — full viewport width (break out of .page horizontal inset) */
+.bass-timeline,
+.electric-detail,
+.electric-repairs-cta,
+.repair-parts {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
+}
+
+.bass-timeline.panel,
+.electric-detail.panel {
+  border-radius: 0;
+}
+
 .bass-timeline {
   margin-top: clamp(20px, 3vw, 36px);
-  padding: clamp(36px, 6vw, 64px) clamp(20px, 5vw, 72px) clamp(52px, 8vw, 96px);
+  padding-top: clamp(36px, 6vw, 64px);
+  padding-bottom: clamp(52px, 8vw, 96px);
+  padding-left: calc(20px + clamp(20px, 5vw, 72px));
+  padding-right: calc(20px + clamp(20px, 5vw, 72px));
   background: #00f0ff;
-  border-radius: 28px;
   overflow: hidden;
 }
 
@@ -1315,7 +1333,10 @@ body.electric-page .electric-intro-band .electric-intro {
   overflow: hidden;
   margin-top: clamp(10px, 2vw, 28px);
   margin-bottom: clamp(22px, 4vw, 44px);
-  padding: clamp(40px, 7vw, 92px) clamp(20px, 5vw, 72px) clamp(48px, 8vw, 104px);
+  padding-top: clamp(40px, 7vw, 92px);
+  padding-bottom: clamp(48px, 8vw, 104px);
+  padding-left: calc(20px + clamp(20px, 5vw, 72px));
+  padding-right: calc(20px + clamp(20px, 5vw, 72px));
   background: #00f0ff;
 }
 
@@ -1442,6 +1463,7 @@ a.electric-detail__heading:focus-visible {
 
 .electric-repairs-main {
   padding: clamp(16px, 2.5vw, 36px) 0 clamp(28px, 5vw, 56px);
+  overflow-x: visible;
 }
 
 .electric-repair-modal__dialog {
@@ -1810,12 +1832,12 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
 
 .electric-repairs-cta {
   margin: clamp(20px, 3vw, 36px) 0 0;
-  padding: clamp(36px, 6vw, 64px) clamp(20px, 5vw, 72px)
-    clamp(52px, 8vw, 96px);
-  border-radius: 28px;
+  padding-top: clamp(36px, 6vw, 64px);
+  padding-bottom: clamp(52px, 8vw, 96px);
+  padding-left: calc(20px + clamp(20px, 5vw, 72px));
+  padding-right: calc(20px + clamp(20px, 5vw, 72px));
   background: var(--timeline-cyan);
   color: var(--timeline-navy);
-  box-sizing: border-box;
 }
 
 .electric-repairs-cta__inner {
@@ -2057,21 +2079,80 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
   margin: 0 auto;
   border-radius: clamp(28px, 4.5vw, 50px);
   border: 3px solid #000000;
-  overflow: hidden;
+  /* overflow:visible — rounded clips + object-fit:crop were hiding native controls */
+  overflow: visible;
   background: #000000;
 }
 
+.repair-detail__video-frame {
+  position: relative;
+  width: 100%;
+}
+
 .repair-detail__video {
+  position: relative;
+  z-index: 0;
   display: block;
   width: 100%;
   max-height: min(85vh, 980px);
-  object-fit: cover;
-  object-position: 50% 38%;
+  height: auto;
+  object-fit: contain;
+  object-position: 50% 50%;
+  border-radius: calc(clamp(28px, 4.5vw, 50px) - 3px);
+  background: #000000;
 }
 
 .repair-detail__video:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
+}
+
+.repair-detail__big-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: clamp(14px, 2.5vw, 28px);
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.28))
+    drop-shadow(0 1px 4px rgba(0, 0, 0, 0.22));
+  transition: opacity 0.2s ease, transform 0.15s ease, visibility 0.2s ease,
+    filter 0.15s ease;
+}
+
+.repair-detail__big-play:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  filter: drop-shadow(0 5px 14px rgba(0, 0, 0, 0.34))
+    drop-shadow(0 2px 5px rgba(0, 0, 0, 0.26));
+}
+
+.repair-detail__big-play:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.repair-detail__big-play-icon {
+  display: block;
+  width: clamp(96px, 18vw, 168px);
+  height: auto;
+  flex-shrink: 0;
+  /* Triangle reads visually heavy on the left — nudge so centroid sits nearer frame center */
+  margin-left: clamp(10px, 2vw, 22px);
+}
+
+.repair-detail__video-shell.is-playing .repair-detail__big-play {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .repair-detail__video-fallback {
@@ -2090,7 +2171,7 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
   margin-top: clamp(22px, 3.5vw, 40px);
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   gap: clamp(18px, 3vw, 32px);
 }
@@ -2101,23 +2182,26 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
 }
 
 .repair-detail__title {
-  margin: 0 0 clamp(10px, 1.5vw, 16px);
+  margin: 0 0 clamp(8px, 1.2vw, 12px);
   font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
   font-weight: 500;
-  font-size: clamp(28px, 4.5vw, 45px);
-  line-height: 1.12;
+  font-size: 18px;
+  line-height: normal;
   letter-spacing: var(--heading-space);
-  color: #ffffff;
+  color: #ededed;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
 }
 
 .repair-detail__subtitle {
   margin: 0;
-  max-width: 52ch;
+  max-width: 48ch;
   font-family: "cofo-sans-variable", system-ui, sans-serif;
-  font-size: clamp(17px, 2.2vw, 20px);
+  font-size: 20px;
   font-weight: 400;
-  line-height: 1.55;
-  color: #ffffff;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  text-wrap: pretty;
 }
 
 .repair-detail__toolbar {
@@ -2159,11 +2243,7 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
 
 .repair-parts {
   margin-top: clamp(36px, 5vw, 56px);
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
   background: var(--accent);
-  box-sizing: border-box;
 }
 
 .repair-parts__inner {
@@ -2176,7 +2256,7 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
 }
 
 .repair-parts__heading {
-  margin: 0;
+  margin: 0 0 clamp(28px, 3.5vw, 40px);
   font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
   font-weight: 500;
   font-size: clamp(22px, 3.2vw, 28px);
@@ -2185,13 +2265,6 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
   color: #000000;
   text-decoration: underline;
   text-underline-offset: 0.14em;
-}
-
-.repair-parts__divider {
-  display: block;
-  width: min(1044px, 100%);
-  height: auto;
-  margin: clamp(14px, 2vw, 22px) auto clamp(28px, 3.5vw, 40px);
 }
 
 .repair-parts__grid {
@@ -2229,6 +2302,25 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Packaging-style card (D’Addario ref): thin rule, generous inset, image contained */
+.repair-parts__img-wrap--strings {
+  border-width: 2px;
+  padding: clamp(20px, 4vw, 44px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.repair-parts__img-wrap--strings img {
+  flex-shrink: 1;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .repair-parts__name {
@@ -2297,6 +2389,13 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
 @media (max-width: 760px) {
   .repair-parts__inner {
     padding-inline: calc(16px + clamp(20px, 5vw, 72px));
+  }
+
+  .bass-timeline,
+  .electric-detail,
+  .electric-repairs-cta {
+    padding-left: calc(16px + clamp(20px, 5vw, 72px));
+    padding-right: calc(16px + clamp(20px, 5vw, 72px));
   }
 }
 

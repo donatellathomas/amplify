@@ -5,19 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — Electric Bass Repairs</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260416flyout-cta" />
+    <link rel="stylesheet" href="./styles.css?v=20260416footer-idle-neutral" />
   </head>
   <body class="electric-repairs-page">
     <main class="page">
       <header class="top-nav">
-        <a href="./index.html">
-          <img
-            class="logo"
-            src="./assets/figma/amplify-logo.png"
-            alt="Amplify"
-          />
-        </a>
-        <div class="top-nav__end">
+        <div class="top-nav__start">
           <nav class="links" aria-label="Main navigation">
             <div class="nav-dropdown">
               <button
@@ -54,26 +47,7 @@
                 <div class="nav-flyout__shadow nav-flyout__shadow--l1">
                   <ul class="nav-flyout__menu">
                     <li class="nav-flyout__tier">
-                      <button type="button" class="nav-flyout__hit">
-                        <span>Bass</span>
-                        <svg
-                          class="nav-flyout__chev"
-                          width="8"
-                          height="12"
-                          viewBox="0 0 8 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M1.5 1.5 L6 6 L1.5 10.5"
-                            stroke="currentColor"
-                            stroke-width="1.6"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </button>
+                      <a class="nav-flyout__hit" href="./bass.html">Bass</a>
                       <div
                         class="nav-flyout__shadow nav-flyout__shadow--l2"
                         role="group"
@@ -83,23 +57,6 @@
                           <li class="nav-flyout__tier">
                             <div class="nav-flyout__hit nav-flyout__hit--split">
                               <a href="./bass-electric.html">Electric</a>
-                              <svg
-                                class="nav-flyout__chev"
-                                width="8"
-                                height="12"
-                                viewBox="0 0 8 12"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                              >
-                                <path
-                                  d="M1.5 1.5 L6 6 L1.5 10.5"
-                                  stroke="currentColor"
-                                  stroke-width="1.6"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                              </svg>
                             </div>
                             <div
                               class="nav-flyout__shadow nav-flyout__shadow--l3"
@@ -135,6 +92,15 @@
               </div>
             </div>
           </nav>
+        </div>
+        <a class="top-nav__brand" href="./index.html">
+          <img
+            class="logo"
+            src="./assets/figma/amplify-logo-nav-trim.png"
+            alt="Amplify"
+          />
+        </a>
+        <div class="top-nav__end">
           <img
             class="account"
             src="./assets/figma/account-icon.svg"
@@ -153,15 +119,32 @@
         >
           <header class="electric-repair-modal__header">
             <h1 id="electric-repair-title" class="electric-repair-modal__title">
-              Repairs List
+              Repairs
             </h1>
-            <div class="electric-repair-modal__toolbar">
+          </header>
+          <div class="electric-repairs-page__list-shell">
+            <ul class="electric-repair-modal__list">
+              <li><a href="#">String Change*</a></li>
+              <li><a href="#">Tightening Input Jack*</a></li>
+              <li><a href="#">Off Intonation*</a></li>
+              <li><a href="#">Fret Buzzing**</a></li>
+              <li><a href="#">High Action**</a></li>
+              <li><a href="#">Scratchy Pots**</a></li>
+              <li><a href="#">Pick up height imbalance**</a></li>
+              <li><a href="#">Broken Soldier Joint***</a></li>
+              <li><a href="#">Warped Neck***</a></li>
+              <li><a href="#">Fret Leveling***</a></li>
+            </ul>
+            <div
+              class="electric-repair-modal__toolbar electric-repair-modal__toolbar--repairs-rail"
+              aria-label="Repair list tools"
+            >
               <label class="electric-repair-modal__search">
                 <img
                   src="./assets/electric-repair/search-icon.svg"
                   alt=""
-                  width="16"
-                  height="16"
+                  width="20"
+                  height="20"
                   decoding="async"
                 />
                 <input
@@ -172,19 +155,72 @@
                   aria-label="Search repairs"
                 />
               </label>
-              <button
-                type="button"
-                class="electric-repair-modal__icon-btn"
-                aria-label="Filter"
-              >
-                <img
-                  src="./assets/electric-repair/filter-icon.svg"
-                  alt=""
-                  width="18"
-                  height="18"
-                  decoding="async"
-                />
-              </button>
+              <div class="electric-repair-modal__filter-dropdown">
+                <button
+                  type="button"
+                  id="repairs-filter-trigger"
+                  class="electric-repair-modal__icon-btn electric-repair-modal__filter-trigger"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-controls="repairs-filter-popover"
+                  aria-label="Filter repairs by difficulty"
+                >
+                  <img
+                    src="./assets/electric-repair/filter-icon.svg"
+                    alt=""
+                    width="22"
+                    height="22"
+                    decoding="async"
+                  />
+                </button>
+                <div
+                  id="repairs-filter-popover"
+                  class="electric-repair-modal__filter-popover"
+                  role="menu"
+                  aria-labelledby="repairs-filter-label"
+                  hidden
+                >
+                  <p id="repairs-filter-label" class="electric-repair-modal__filter-heading">
+                    Show repairs with
+                  </p>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="true"
+                    class="electric-repair-modal__filter-option"
+                    data-repairs-tier="all"
+                  >
+                    All levels
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-repairs-tier="1"
+                  >
+                    Beginner (*)
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-repairs-tier="2"
+                  >
+                    Intermediate (**)
+                  </button>
+                  <button
+                    type="button"
+                    role="menuitemradio"
+                    aria-checked="false"
+                    class="electric-repair-modal__filter-option"
+                    data-repairs-tier="3"
+                  >
+                    Advanced (***)
+                  </button>
+                </div>
+              </div>
               <button
                 type="button"
                 class="electric-repair-modal__icon-btn"
@@ -193,31 +229,13 @@
                 <img
                   src="./assets/electric-repair/sort-icon.svg"
                   alt=""
-                  width="20"
-                  height="20"
+                  width="22"
+                  height="22"
                   decoding="async"
                 />
               </button>
-              <a
-                href="./bass-electric.html"
-                class="electric-repair-modal__close electric-repair-modal__close--link"
-                aria-label="Back to Electric Bass"
-                >Back</a
-              >
             </div>
-          </header>
-          <ul class="electric-repair-modal__list">
-            <li><a href="#">String Change*</a></li>
-            <li><a href="#">Tightening Input Jack*</a></li>
-            <li><a href="#">Off Intonation*</a></li>
-            <li><a href="#">Fret Buzzing**</a></li>
-            <li><a href="#">High Action**</a></li>
-            <li><a href="#">Scratchy Pots**</a></li>
-            <li><a href="#">Pick up height imbalance**</a></li>
-            <li><a href="#">Broken Soldier Joint***</a></li>
-            <li><a href="#">Warped Neck***</a></li>
-            <li><a href="#">Fret Leveling***</a></li>
-          </ul>
+          </div>
           <section
             class="electric-repairs-cta"
             aria-labelledby="electric-repairs-cta-heading"
@@ -279,51 +297,57 @@
           <textarea
             class="footer__message"
             name="message"
-            rows="5"
+            rows="4"
             placeholder="Type your message here..."
           ></textarea>
         </section>
         <section>
           <h3>Bass</h3>
           <ul>
-            <li>Models</li>
+            <li><a href="./bass.html">Models</a></li>
             <li><a href="./bass-electric-repairs.html">Repairs</a></li>
-            <li>Problems</li>
-            <li>Forum</li>
+            <li>
+              <a href="./bass-electric.html#electric-diagram-repair"
+                >Diagrams</a
+              >
+            </li>
           </ul>
           <h3>Drums</h3>
-          <ul>
-            <li>Models</li>
-            <li>Repairs</li>
-            <li>Problems</li>
-            <li>Forum</li>
+          <ul class="footer__list footer__list--drums">
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Repairs</a></li>
+            <li><a href="#">Diagrams</a></li>
           </ul>
         </section>
         <section>
           <h3>Guitar</h3>
-          <ul>
-            <li>Models</li>
-            <li>Repairs</li>
-            <li>Problems</li>
-            <li>Forum</li>
+          <ul class="footer__list footer__list--guitar">
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Repairs</a></li>
+            <li><a href="#">Diagrams</a></li>
           </ul>
           <h3>Keys</h3>
-          <ul>
-            <li>Models</li>
-            <li>Repairs</li>
-            <li>Problems</li>
-            <li>Forum</li>
+          <ul class="footer__list footer__list--keys">
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Repairs</a></li>
+            <li><a href="#">Diagrams</a></li>
           </ul>
         </section>
         <section>
           <h3>Customer Service</h3>
           <ul>
-            <li>Help</li>
+            <li><a href="#">Help</a></li>
+            <li>
+              <a href="./bass-electric-repairs.html#electric-repairs-cta-heading"
+                >Submit a request</a
+              >
+            </li>
+            <li><a href="#">Find a retailer</a></li>
           </ul>
         </section>
       </footer>
     </main>
-    <script src="./js/electric-repairs-list.js"></script>
+    <script src="./js/electric-repairs-list.js?v=20260416repairs-labels-cta"></script>
     <script src="./js/nav-instruments-dropdown.js"></script>
     <script src="./js/no-widows.js"></script>
     <script src="./js/footer-message.js"></script>

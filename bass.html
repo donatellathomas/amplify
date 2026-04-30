@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — Bass</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260416flyout-cta" />
+    <link rel="stylesheet" href="./styles.css?v=20260416footer-idle-neutral" />
     <script
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
@@ -14,14 +14,7 @@
   <body class="bass-page">
     <main class="page">
       <header class="top-nav">
-        <a href="./index.html">
-          <img
-            class="logo"
-            src="./assets/figma/amplify-logo.png"
-            alt="Amplify"
-          />
-        </a>
-        <div class="top-nav__end">
+        <div class="top-nav__start">
           <nav class="links" aria-label="Main navigation">
             <div class="nav-dropdown">
               <button
@@ -58,26 +51,7 @@
                 <div class="nav-flyout__shadow nav-flyout__shadow--l1">
                   <ul class="nav-flyout__menu">
                     <li class="nav-flyout__tier">
-                      <button type="button" class="nav-flyout__hit">
-                        <span>Bass</span>
-                        <svg
-                          class="nav-flyout__chev"
-                          width="8"
-                          height="12"
-                          viewBox="0 0 8 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          aria-hidden="true"
-                        >
-                          <path
-                            d="M1.5 1.5 L6 6 L1.5 10.5"
-                            stroke="currentColor"
-                            stroke-width="1.6"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                          />
-                        </svg>
-                      </button>
+                      <a class="nav-flyout__hit" href="./bass.html">Bass</a>
                       <div
                         class="nav-flyout__shadow nav-flyout__shadow--l2"
                         role="group"
@@ -87,23 +61,6 @@
                           <li class="nav-flyout__tier">
                             <div class="nav-flyout__hit nav-flyout__hit--split">
                               <a href="./bass-electric.html">Electric</a>
-                              <svg
-                                class="nav-flyout__chev"
-                                width="8"
-                                height="12"
-                                viewBox="0 0 8 12"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                aria-hidden="true"
-                              >
-                                <path
-                                  d="M1.5 1.5 L6 6 L1.5 10.5"
-                                  stroke="currentColor"
-                                  stroke-width="1.6"
-                                  stroke-linecap="round"
-                                  stroke-linejoin="round"
-                                />
-                              </svg>
                             </div>
                             <div
                               class="nav-flyout__shadow nav-flyout__shadow--l3"
@@ -139,6 +96,15 @@
               </div>
             </div>
           </nav>
+        </div>
+        <a class="top-nav__brand" href="./index.html">
+          <img
+            class="logo"
+            src="./assets/figma/amplify-logo-nav-trim.png"
+            alt="Amplify"
+          />
+        </a>
+        <div class="top-nav__end">
           <img
             class="account"
             src="./assets/figma/account-icon.svg"
@@ -401,46 +367,52 @@
           <textarea
             class="footer__message"
             name="message"
-            rows="5"
+            rows="4"
             placeholder="Type your message here..."
           ></textarea>
         </section>
         <section>
           <h3>Bass</h3>
           <ul>
-            <li>Models</li>
+            <li><a href="./bass.html">Models</a></li>
             <li><a href="./bass-electric-repairs.html">Repairs</a></li>
-            <li>Problems</li>
-            <li>Forum</li>
+            <li>
+              <a href="./bass-electric.html#electric-diagram-repair"
+                >Diagrams</a
+              >
+            </li>
           </ul>
           <h3>Drums</h3>
-          <ul>
-            <li>Models</li>
-            <li>Repairs</li>
-            <li>Problems</li>
-            <li>Forum</li>
+          <ul class="footer__list footer__list--drums">
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Repairs</a></li>
+            <li><a href="#">Diagrams</a></li>
           </ul>
         </section>
         <section>
           <h3>Guitar</h3>
-          <ul>
-            <li>Models</li>
-            <li>Repairs</li>
-            <li>Problems</li>
-            <li>Forum</li>
+          <ul class="footer__list footer__list--guitar">
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Repairs</a></li>
+            <li><a href="#">Diagrams</a></li>
           </ul>
           <h3>Keys</h3>
-          <ul>
-            <li>Models</li>
-            <li>Repairs</li>
-            <li>Problems</li>
-            <li>Forum</li>
+          <ul class="footer__list footer__list--keys">
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Repairs</a></li>
+            <li><a href="#">Diagrams</a></li>
           </ul>
         </section>
         <section>
           <h3>Customer Service</h3>
           <ul>
-            <li>Help</li>
+            <li><a href="#">Help</a></li>
+            <li>
+              <a href="./bass-electric-repairs.html#electric-repairs-cta-heading"
+                >Submit a request</a
+              >
+            </li>
+            <li><a href="#">Find a retailer</a></li>
           </ul>
         </section>
       </footer>

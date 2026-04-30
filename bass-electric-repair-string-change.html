@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amplify — String Change</title>
+    <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260430repair-string-change-video" />
+  </head>
+  <body class="repair-detail-page">
+    <main class="page">
+      <header class="top-nav">
+        <div class="top-nav__start">
+          <nav class="links" aria-label="Main navigation">
+            <div class="nav-dropdown">
+              <button
+                type="button"
+                class="nav-dropdown__trigger nav-dropdown__trigger--hamburger"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="nav-instruments-menu"
+                id="nav-instruments-trigger"
+                aria-label="Instruments menu"
+              >
+                <svg
+                  class="nav-dropdown__hamburger"
+                  width="28"
+                  height="22"
+                  viewBox="0 0 28 22"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2 5h24M2 11h24M2 17h24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </button>
+              <div
+                class="nav-flyout"
+                id="nav-instruments-menu"
+                aria-labelledby="nav-instruments-trigger"
+              >
+                <div class="nav-flyout__shadow nav-flyout__shadow--l1">
+                  <ul class="nav-flyout__menu">
+                    <li class="nav-flyout__tier">
+                      <a class="nav-flyout__hit" href="./bass.html">Bass</a>
+                      <div
+                        class="nav-flyout__shadow nav-flyout__shadow--l2"
+                        role="group"
+                        aria-label="Bass models"
+                      >
+                        <ul class="nav-flyout__menu">
+                          <li class="nav-flyout__tier">
+                            <div class="nav-flyout__hit nav-flyout__hit--split">
+                              <a href="./bass-electric.html">Electric</a>
+                            </div>
+                            <div
+                              class="nav-flyout__shadow nav-flyout__shadow--l3"
+                              role="group"
+                              aria-label="Electric bass"
+                            >
+                              <ul class="nav-flyout__menu">
+                                <li>
+                                  <a href="./bass-electric-repairs.html"
+                                    >Repair</a
+                                  >
+                                </li>
+                                <li>
+                                  <a
+                                    href="./bass-electric.html#electric-diagram-repair"
+                                    >Diagram</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><a href="./bass.html">Acoustic</a></li>
+                          <li><a href="./bass.html">Double</a></li>
+                          <li><a href="./bass.html">Fretless</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li><a href="#" class="nav-link--drums">Drums</a></li>
+                    <li><a href="#" class="nav-link--guitar">Guitar</a></li>
+                    <li><a href="#" class="nav-link--keys">Keys</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <a class="top-nav__brand" href="./index.html">
+          <img
+            class="logo"
+            src="./assets/figma/amplify-logo-nav-trim.png"
+            alt="Amplify"
+          />
+        </a>
+        <div class="top-nav__end">
+          <img
+            class="account"
+            src="./assets/figma/account-icon.svg"
+            alt="Account"
+          />
+        </div>
+      </header>
+
+      <article class="repair-detail">
+        <header class="repair-detail__hero">
+          <div class="repair-detail__video-shell">
+            <video
+              class="repair-detail__video"
+              controls
+              playsinline
+              preload="metadata"
+              poster="./assets/repairs/string-change/video-poster-web.jpg"
+              aria-label="String change tutorial video"
+            >
+              <source
+                src="./assets/repairs/string-change/StringChangeTutorial.mov"
+                type="video/quicktime"
+              />
+              <p class="repair-detail__video-fallback">
+                Video not supported in this browser.
+                <a href="./assets/repairs/string-change/StringChangeTutorial.mov"
+                  >Download the tutorial</a
+                >.
+              </p>
+            </video>
+          </div>
+          <div class="repair-detail__meta">
+            <div class="repair-detail__titles">
+              <h1 class="repair-detail__title">String Change</h1>
+              <p class="repair-detail__subtitle">
+                Kennis Russel walks through removing old strings, cleaning the
+                fretboard, and winding fresh strings for a stable, even setup.
+              </p>
+            </div>
+            <div
+              class="repair-detail__toolbar"
+              role="toolbar"
+              aria-label="Article feedback"
+            >
+              <button type="button" class="repair-detail__tool" aria-label="Like">
+                <img
+                  src="./assets/repairs/string-change/icon-like.svg"
+                  alt=""
+                  width="56"
+                  height="56"
+                  decoding="async"
+                />
+              </button>
+              <button
+                type="button"
+                class="repair-detail__tool"
+                aria-label="Dislike"
+              >
+                <img
+                  src="./assets/repairs/string-change/thumb-down.svg"
+                  alt=""
+                  width="56"
+                  height="56"
+                  decoding="async"
+                />
+              </button>
+              <button
+                type="button"
+                class="repair-detail__tool"
+                aria-label="Bookmark"
+              >
+                <img
+                  src="./assets/repairs/string-change/icon-bookmark.svg"
+                  alt=""
+                  width="56"
+                  height="56"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="repair-detail__tool" aria-label="Save">
+                <img
+                  src="./assets/repairs/string-change/icon-save.svg"
+                  alt=""
+                  width="56"
+                  height="56"
+                  decoding="async"
+                />
+              </button>
+              <button type="button" class="repair-detail__tool" aria-label="Share">
+                <img
+                  src="./assets/repairs/string-change/icon-share.svg"
+                  alt=""
+                  width="56"
+                  height="56"
+                  decoding="async"
+                />
+              </button>
+            </div>
+          </div>
+        </header>
+
+        <section class="repair-parts" aria-labelledby="repair-parts-heading">
+          <div class="repair-parts__inner">
+            <h2 id="repair-parts-heading" class="repair-parts__heading">
+              Parts Needed
+            </h2>
+            <img
+              class="repair-parts__divider"
+              src="./assets/repairs/string-change/divider-line.svg"
+              alt=""
+              width="1044"
+              height="12"
+              decoding="async"
+            />
+            <ul class="repair-parts__grid">
+              <li class="repair-parts__card">
+                <div class="repair-parts__img-wrap">
+                  <img
+                    src="./assets/repairs/string-change/microfiber.jpg"
+                    alt="Microfiber cloth"
+                    width="440"
+                    height="440"
+                    decoding="async"
+                  />
+                </div>
+                <p class="repair-parts__name">Microfiber cloth</p>
+                <p class="repair-parts__price-row">$9.99</p>
+              </li>
+              <li class="repair-parts__card">
+                <div class="repair-parts__img-wrap">
+                  <img
+                    src="./assets/repairs/string-change/wire-cutters.jpg"
+                    alt="Wire cutters"
+                    width="440"
+                    height="440"
+                    decoding="async"
+                  />
+                </div>
+                <p class="repair-parts__name">Wire cutters</p>
+                <p class="repair-parts__price-row">$5.39</p>
+              </li>
+              <li class="repair-parts__card">
+                <div class="repair-parts__img-wrap">
+                  <img
+                    src="./assets/repairs/string-change/strings.jpg"
+                    alt="D’Addario bass strings"
+                    width="440"
+                    height="440"
+                    decoding="async"
+                  />
+                </div>
+                <p class="repair-parts__name">D’Addario strings</p>
+                <p class="repair-parts__price-row">
+                  <span>$11.99</span>
+                  <span class="repair-parts__price-was">$23.99</span>
+                </p>
+                <p class="repair-parts__badge">50% off</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </article>
+
+      <footer class="footer">
+        <section>
+          <h3>Contact Us</h3>
+          <p>amplify@gmail.com</p>
+          <p>123-456-7890</p>
+          <p>Message:</p>
+          <textarea
+            class="footer__message"
+            name="message"
+            rows="4"
+            placeholder="Type your message here..."
+          ></textarea>
+        </section>
+        <section>
+          <h3>Bass</h3>
+          <ul>
+            <li><a href="./bass.html">Models</a></li>
+            <li><a href="./bass-electric-repairs.html">Repairs</a></li>
+            <li>
+              <a href="./bass-electric.html#electric-diagram-repair"
+                >Diagrams</a
+              >
+            </li>
+          </ul>
+          <h3>Drums</h3>
+          <ul class="footer__list footer__list--drums">
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Repairs</a></li>
+            <li><a href="#">Diagrams</a></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Guitar</h3>
+          <ul class="footer__list footer__list--guitar">
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Repairs</a></li>
+            <li><a href="#">Diagrams</a></li>
+          </ul>
+          <h3>Keys</h3>
+          <ul class="footer__list footer__list--keys">
+            <li><a href="#">Models</a></li>
+            <li><a href="#">Repairs</a></li>
+            <li><a href="#">Diagrams</a></li>
+          </ul>
+        </section>
+        <section>
+          <h3>Customer Service</h3>
+          <ul>
+            <li><a href="#">Help</a></li>
+            <li>
+              <a href="./bass-electric-repairs.html#electric-repairs-cta-heading"
+                >Submit a request</a
+              >
+            </li>
+            <li><a href="#">Find a retailer</a></li>
+          </ul>
+        </section>
+      </footer>
+    </main>
+    <script src="./js/nav-instruments-dropdown.js"></script>
+    <script src="./js/no-widows.js"></script>
+    <script src="./js/footer-message.js"></script>
+  </body>
+</html>

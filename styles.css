@@ -50,12 +50,15 @@ body.bass-page {
 }
 
 html:has(body.electric-repairs-page),
-body.electric-repairs-page {
+html:has(body.repair-detail-page),
+body.electric-repairs-page,
+body.repair-detail-page {
   overflow-x: hidden;
   max-width: 100%;
 }
 
-body.electric-repairs-page {
+body.electric-repairs-page,
+body.repair-detail-page {
   overscroll-behavior-x: none;
 }
 
@@ -124,7 +127,8 @@ body.electric-repairs-page {
 */
 body.bass-page .top-nav,
 body.electric-page .top-nav,
-body.electric-repairs-page .top-nav {
+body.electric-repairs-page .top-nav,
+body.repair-detail-page .top-nav {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -136,12 +140,14 @@ body.electric-repairs-page .top-nav {
 
 body.bass-page .page,
 body.electric-page .page,
-body.electric-repairs-page .page {
+body.electric-repairs-page .page,
+body.repair-detail-page .page {
   padding-top: var(--top-nav-h);
 }
 
 /* Repairs page: match Bass history horizontal inset (.page pad + .bass-history pad) */
-body.electric-repairs-page .page {
+body.electric-repairs-page .page,
+body.repair-detail-page .page {
   padding-inline: calc(20px + clamp(20px, 5vw, 72px));
 }
 
@@ -2035,6 +2041,265 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
   }
 }
 
+/* ——— Repair detail — String Change (Figma 148:172) ——— */
+.repair-detail {
+  padding-bottom: clamp(40px, 6vw, 72px);
+}
+
+.repair-detail__hero {
+  margin: clamp(8px, 1.5vw, 20px) auto 0;
+  max-width: min(1488px, 100%);
+}
+
+.repair-detail__video-shell {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: clamp(28px, 4.5vw, 50px);
+  border: 3px solid #000000;
+  overflow: hidden;
+  background: #000000;
+}
+
+.repair-detail__video {
+  display: block;
+  width: 100%;
+  max-height: min(85vh, 980px);
+  object-fit: cover;
+  object-position: 50% 38%;
+}
+
+.repair-detail__video:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.repair-detail__video-fallback {
+  margin: 0;
+  padding: 1rem 1.25rem;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #ededed;
+}
+
+.repair-detail__video-fallback a {
+  color: var(--accent);
+}
+
+.repair-detail__meta {
+  margin-top: clamp(22px, 3.5vw, 40px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: clamp(18px, 3vw, 32px);
+}
+
+.repair-detail__titles {
+  flex: 1 1 14rem;
+  min-width: 0;
+}
+
+.repair-detail__title {
+  margin: 0 0 clamp(10px, 1.5vw, 16px);
+  font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: clamp(28px, 4.5vw, 45px);
+  line-height: 1.12;
+  letter-spacing: var(--heading-space);
+  color: #ffffff;
+}
+
+.repair-detail__subtitle {
+  margin: 0;
+  max-width: 52ch;
+  font-family: "cofo-sans-variable", system-ui, sans-serif;
+  font-size: clamp(17px, 2.2vw, 20px);
+  font-weight: 400;
+  line-height: 1.55;
+  color: #ffffff;
+}
+
+.repair-detail__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(6px, 1.2vw, 14px);
+}
+
+.repair-detail__tool {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(44px, 6vw, 56px);
+  height: clamp(44px, 6vw, 56px);
+  padding: 0;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.repair-detail__tool:hover {
+  opacity: 0.78;
+}
+
+.repair-detail__tool:focus-visible {
+  outline: 2px solid #ededed;
+  outline-offset: 3px;
+}
+
+.repair-detail__tool img {
+  display: block;
+  width: 56%;
+  height: auto;
+  max-width: 36px;
+}
+
+.repair-parts {
+  margin-top: clamp(36px, 5vw, 56px);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: var(--accent);
+  box-sizing: border-box;
+}
+
+.repair-parts__inner {
+  max-width: 1728px;
+  margin: 0 auto;
+  padding: clamp(36px, 5vw, 56px)
+    calc(20px + clamp(20px, 5vw, 72px))
+    clamp(44px, 6vw, 72px);
+  box-sizing: border-box;
+}
+
+.repair-parts__heading {
+  margin: 0;
+  font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: clamp(22px, 3.2vw, 28px);
+  letter-spacing: var(--heading-space);
+  line-height: 1.2;
+  color: #000000;
+  text-decoration: underline;
+  text-underline-offset: 0.14em;
+}
+
+.repair-parts__divider {
+  display: block;
+  width: min(1044px, 100%);
+  height: auto;
+  margin: clamp(14px, 2vw, 22px) auto clamp(28px, 3.5vw, 40px);
+}
+
+.repair-parts__grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 2.5vw, 36px);
+  align-items: start;
+}
+
+.repair-parts__card {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(14px, 2vw, 20px);
+}
+
+.repair-parts__img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: min(440px, 100%);
+  margin: 0 auto;
+  border-radius: clamp(28px, 4vw, 50px);
+  border: 3px solid #000000;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.repair-parts__img-wrap img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.repair-parts__name {
+  margin: 0;
+  font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: clamp(18px, 2.4vw, 22px);
+  letter-spacing: var(--heading-space);
+  line-height: 1.25;
+  color: #000000;
+  text-align: center;
+}
+
+.repair-parts__price-row {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35em 0.65em;
+  font-family: "cofo-sans-variable", system-ui, sans-serif;
+  font-size: clamp(17px, 2vw, 20px);
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+}
+
+.repair-parts__price-was {
+  text-decoration: line-through;
+  font-weight: 500;
+  opacity: 0.72;
+}
+
+.repair-parts__badge {
+  margin: 0 auto;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 2px solid #000000;
+  font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: var(--heading-space);
+  color: #000000;
+  background: transparent;
+  width: fit-content;
+}
+
+@media (max-width: 900px) {
+  .repair-parts__grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-inline: auto;
+  }
+
+  .repair-detail__meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .repair-detail__toolbar {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .repair-parts__inner {
+    padding-inline: calc(16px + clamp(20px, 5vw, 72px));
+  }
+}
+
 .electric-detail__body {
   margin: 0 0 6px;
   max-width: 48ch;
@@ -2331,13 +2596,15 @@ h2 {
 
   body.bass-page .page,
   body.electric-page .page,
-  body.electric-repairs-page .page {
+  body.electric-repairs-page .page,
+  body.repair-detail-page .page {
     padding: var(--top-nav-h) 16px 30px;
   }
 
   body.bass-page .top-nav,
   body.electric-page .top-nav,
-  body.electric-repairs-page .top-nav {
+  body.electric-repairs-page .top-nav,
+  body.repair-detail-page .top-nav {
     padding-inline: 16px;
   }
 
@@ -2346,7 +2613,8 @@ h2 {
     gap: 8px;
   }
 
-  body.electric-repairs-page .page {
+  body.electric-repairs-page .page,
+  body.repair-detail-page .page {
     padding-left: calc(16px + clamp(20px, 5vw, 72px));
     padding-right: calc(16px + clamp(20px, 5vw, 72px));
   }

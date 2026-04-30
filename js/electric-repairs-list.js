@@ -103,7 +103,9 @@
 
     list.addEventListener("click", function (e) {
       var a = e.target.closest("a");
-      if (a && list.contains(a)) {
+      if (!a || !list.contains(a)) return;
+      var href = (a.getAttribute("href") || "").trim();
+      if (href === "" || href === "#") {
         e.preventDefault();
       }
     });

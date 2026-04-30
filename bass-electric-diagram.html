@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amplify — String Change</title>
+    <title>Amplify — Electric Bass Diagrams</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260416electric-diagram-nav" />
+    <link rel="stylesheet" href="./styles.css?v=20260416diagram-no-illo-list-type" />
   </head>
-  <body class="repair-detail-page">
+  <body class="electric-diagram-page">
     <main class="page">
       <header class="top-nav">
         <div class="top-nav__start">
@@ -70,8 +70,7 @@
                                   >
                                 </li>
                                 <li>
-                                  <a
-                                    href="./bass-electric-diagram.html"
+                                  <a href="./bass-electric-diagram.html"
                                     >Diagram</a
                                   >
                                 </li>
@@ -109,155 +108,158 @@
         </div>
       </header>
 
-      <article class="repair-detail">
-        <header class="repair-detail__hero">
-          <div class="repair-detail__video-shell">
-            <div class="repair-detail__video-frame">
-              <video
-                id="repair-detail-video"
-                class="repair-detail__video"
-                controls
-                playsinline
-                preload="auto"
-                aria-label="String change tutorial video"
-              >
-                <source
-                  src="./assets/repairs/string-change/StringChangeTutorial.mp4"
-                  type="video/mp4"
-                />
-                <source
-                  src="./assets/repairs/string-change/StringChangeTutorial.mov"
-                  type="video/quicktime"
-                />
-                <p class="repair-detail__video-fallback">
-                  Video not supported in this browser.
-                  <a href="./assets/repairs/string-change/StringChangeTutorial.mp4"
-                    >Download the tutorial</a
-                  >.
-                </p>
-              </video>
-              <button
-                type="button"
-                class="repair-detail__big-play"
-                id="repair-detail-play-btn"
-                aria-label="Play tutorial video"
-              >
-                <svg
-                  class="repair-detail__big-play-icon"
-                  width="140"
-                  height="140"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M8.45 5.85 L8.45 18.15 L18.25 12 Z"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-          <div class="repair-detail__meta">
-            <div class="repair-detail__titles">
-              <h1 class="repair-detail__title">String Change</h1>
-              <p class="repair-detail__subtitle">
-                Kennis Russel walks through removing old strings, cleaning the
-                fretboard, and winding fresh strings for a stable, even setup.
-              </p>
-            </div>
-            <div
-              class="repair-detail__toolbar"
-              role="toolbar"
-              aria-label="Article feedback"
+      <section
+        id="electric-diagram-root"
+        class="electric-diagram-main"
+        aria-labelledby="electric-diagram-models-heading"
+      >
+        <div
+          class="electric-repair-modal__dialog electric-repair-modal__dialog--page"
+        >
+          <header class="electric-repair-modal__header">
+            <h1
+              id="electric-diagram-models-heading"
+              class="electric-repair-modal__title"
             >
-              <button
-                type="button"
-                class="repair-detail__tool"
-                aria-label="Like"
-              >
-                <img
-                  src="./assets/repairs/string-change/icon-like.svg?v=2"
-                  alt=""
-                  decoding="async"
-                />
-              </button>
-              <button
-                type="button"
-                class="repair-detail__tool"
-                aria-label="Dislike"
-              >
-                <img
-                  class="repair-detail__tool-icon--dislike"
-                  src="./assets/repairs/string-change/thumb-down.svg?v=2"
-                  alt=""
-                  decoding="async"
-                />
-              </button>
-              <button type="button" class="repair-detail__tool" aria-label="Share">
-                <img
-                  src="./assets/repairs/string-change/icon-share.svg"
-                  alt=""
-                  decoding="async"
-                />
-              </button>
-            </div>
-          </div>
-        </header>
-
-        <section class="repair-parts" aria-labelledby="repair-parts-heading">
-          <div class="repair-parts__inner">
-            <h2 id="repair-parts-heading" class="repair-parts__heading">
-              Parts Needed
-            </h2>
-            <ul class="repair-parts__grid">
-              <li class="repair-parts__card">
-                <div class="repair-parts__img-wrap">
-                  <img
-                    src="./assets/repairs/string-change/microfiber.jpg"
-                    alt="Microfiber cloth"
-                    width="440"
-                    height="440"
-                    decoding="async"
-                  />
-                </div>
-                <p class="repair-parts__name">Microfiber cloth</p>
-                <p class="repair-parts__price-row">$9.99</p>
+              Models List
+            </h1>
+          </header>
+          <div class="electric-diagram-models__list-shell">
+            <ul class="electric-repair-modal__list" id="electric-diagram-models-list">
+              <li data-model-name="fender precision bass">
+                <a href="#">Fender Precision Bass</a>
               </li>
-              <li class="repair-parts__card">
-                <div class="repair-parts__img-wrap">
-                  <img
-                    src="./assets/repairs/string-change/wire-cutters.jpg"
-                    alt="Wire cutters"
-                    width="440"
-                    height="440"
-                    decoding="async"
-                  />
-                </div>
-                <p class="repair-parts__name">Wire cutters</p>
-                <p class="repair-parts__price-row">$5.39</p>
+              <li data-model-name="fender jazz bass">
+                <a href="#">Fender Jazz Bass</a>
               </li>
-              <li class="repair-parts__card">
-                <div class="repair-parts__img-wrap">
-                  <img
-                    src="./assets/repairs/string-change/strings-product.png?v=ref880"
-                    alt="D’Addario XL nickel wound bass strings, long scale"
-                    width="880"
-                    height="880"
-                    decoding="async"
-                  />
-                </div>
-                <p class="repair-parts__name">D’Addario strings</p>
-                <p class="repair-parts__price-row">
-                  <span>$11.99</span>
-                  <span class="repair-parts__price-was">$23.99</span>
-                </p>
-                <p class="repair-parts__badge">50% off</p>
+              <li data-model-name="music man stingray">
+                <a href="#">Music Man StingRay</a>
+              </li>
+              <li data-model-name="rickenbacker 4001">
+                <a href="#">Rickenbacker 4001</a>
+              </li>
+              <li data-model-name="gibson eb-3">
+                <a href="#">Gibson EB-3</a>
+              </li>
+              <li data-model-name="ibanez iv1sr">
+                <a href="#">Ibanez IV1SR</a>
+              </li>
+              <li data-model-name="yamaha trbx504">
+                <a href="#">Yamaha TRBX504</a>
+              </li>
+              <li data-model-name="warwick thumb bass">
+                <a href="#">Warwick Thumb Bass</a>
+              </li>
+              <li data-model-name="squier classic vibe '60s jazz bass">
+                <a href="#">Squier Classic Vibe '60s Jazz Bass</a>
+              </li>
+              <li data-model-name="höfner 500/1 violin bass">
+                <a href="#">Höfner 500/1 Violin Bass</a>
               </li>
             </ul>
+            <div
+              class="electric-repair-modal__toolbar electric-repair-modal__toolbar--repairs-rail"
+              aria-label="Model list tools"
+            >
+              <label class="electric-repair-modal__search">
+                <img
+                  src="./assets/electric-repair/search-icon.svg"
+                  alt=""
+                  width="20"
+                  height="20"
+                  decoding="async"
+                />
+                <input
+                  type="search"
+                  class="electric-repair-modal__search-input"
+                  id="diagram-models-search"
+                  placeholder="Search..."
+                  autocomplete="off"
+                  aria-label="Search models"
+                />
+              </label>
+              <button
+                type="button"
+                class="electric-repair-modal__icon-btn"
+                aria-label="Filter (coming soon)"
+                disabled
+              >
+                <img
+                  src="./assets/electric-repair/filter-icon.svg"
+                  alt=""
+                  width="22"
+                  height="22"
+                  decoding="async"
+                />
+              </button>
+              <button
+                type="button"
+                class="electric-repair-modal__icon-btn"
+                id="diagram-models-sort"
+                aria-label="Sort models A–Z"
+              >
+                <img
+                  src="./assets/electric-repair/sort-icon.svg"
+                  alt=""
+                  width="22"
+                  height="22"
+                  decoding="async"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <section
+          class="electric-repairs-cta"
+          aria-labelledby="electric-diagram-cta-heading"
+        >
+          <div class="electric-repairs-cta__inner">
+            <div class="electric-repairs-cta__copy">
+              <h2
+                id="electric-diagram-cta-heading"
+                class="electric-repairs-cta__title"
+              >
+                Don't see your model?
+              </h2>
+              <p class="electric-repairs-cta__subtitle">Submit a request!</p>
+              <h3 class="electric-repairs-cta__how">How it works</h3>
+              <p class="electric-repairs-cta__body">
+                Our talented team of designers, engineers, and music enthusiasts
+                will begin the process of supplying your model. Once the model
+                has been populated on the site, an email will be sent to your
+                inbox from the Amplify team.
+              </p>
+            </div>
+            <form class="electric-repairs-cta__form" action="#" method="post">
+              <label class="visually-hidden" for="electric-diagram-cta-email"
+                >Email</label
+              >
+              <input
+                id="electric-diagram-cta-email"
+                class="electric-repairs-cta__input"
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder="Enter your email..."
+              />
+              <label class="visually-hidden" for="electric-diagram-cta-msg"
+                >Model request</label
+              >
+              <textarea
+                id="electric-diagram-cta-msg"
+                class="electric-repairs-cta__textarea"
+                name="request"
+                rows="5"
+                placeholder="Request a model..."
+              ></textarea>
+              <button class="electric-repairs-cta__submit" type="submit">
+                Submit
+              </button>
+            </form>
           </div>
         </section>
-      </article>
+      </section>
 
       <footer class="footer">
         <section>
@@ -278,9 +280,7 @@
             <li><a href="./bass.html">Models</a></li>
             <li><a href="./bass-electric-repairs.html">Repairs</a></li>
             <li>
-              <a href="./bass-electric-diagram.html"
-                >Diagrams</a
-              >
+              <a href="./bass-electric-diagram.html">Diagrams</a>
             </li>
           </ul>
           <h3>Drums</h3>
@@ -309,7 +309,7 @@
           <ul>
             <li><a href="#">Help</a></li>
             <li>
-              <a href="./bass-electric-repairs.html#electric-repairs-cta-heading"
+              <a href="./bass-electric-diagram.html#electric-diagram-cta-heading"
                 >Submit a request</a
               >
             </li>
@@ -318,9 +318,9 @@
         </section>
       </footer>
     </main>
+    <script src="./js/electric-diagram-models.js?v=20260416diagram-no-illo-list-type"></script>
     <script src="./js/nav-instruments-dropdown.js"></script>
     <script src="./js/no-widows.js"></script>
     <script src="./js/footer-message.js"></script>
-    <script src="./js/repair-detail-video.js?v=20260430repair-play-soft-round"></script>
   </body>
 </html>

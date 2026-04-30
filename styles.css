@@ -51,14 +51,17 @@ body.bass-page {
 
 html:has(body.electric-repairs-page),
 html:has(body.repair-detail-page),
+html:has(body.electric-diagram-page),
 body.electric-repairs-page,
-body.repair-detail-page {
+body.repair-detail-page,
+body.electric-diagram-page {
   overflow-x: hidden;
   max-width: 100%;
 }
 
 body.electric-repairs-page,
-body.repair-detail-page {
+body.repair-detail-page,
+body.electric-diagram-page {
   overscroll-behavior-x: none;
 }
 
@@ -128,7 +131,8 @@ body.repair-detail-page {
 body.bass-page .top-nav,
 body.electric-page .top-nav,
 body.electric-repairs-page .top-nav,
-body.repair-detail-page .top-nav {
+body.repair-detail-page .top-nav,
+body.electric-diagram-page .top-nav {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
@@ -141,14 +145,9 @@ body.repair-detail-page .top-nav {
 body.bass-page .page,
 body.electric-page .page,
 body.electric-repairs-page .page,
-body.repair-detail-page .page {
+body.repair-detail-page .page,
+body.electric-diagram-page .page {
   padding-top: var(--top-nav-h);
-}
-
-/* Repairs page: match Bass history horizontal inset (.page pad + .bass-history pad) */
-body.electric-repairs-page .page,
-body.repair-detail-page .page {
-  padding-inline: calc(20px + clamp(20px, 5vw, 72px));
 }
 
 .top-nav__end {
@@ -1665,7 +1664,8 @@ a.electric-repair-modal__close--link {
 }
 
 /* Repairs page: typography + spacing overrides (after base `.electric-repair-modal__*` rules) */
-body.electric-repairs-page .electric-repair-modal__header {
+body.electric-repairs-page .electric-repair-modal__header,
+body.electric-diagram-page .electric-repair-modal__header {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
@@ -1673,9 +1673,12 @@ body.electric-repairs-page .electric-repair-modal__header {
   text-align: left;
   gap: clamp(12px, 2vw, 20px);
   margin: clamp(8px, 1.2vw, 14px) 0 clamp(12px, 1.5vw, 18px);
+  /* Align with `.bass-history` inner gutter (page pad + section clamp) */
+  padding-inline: clamp(20px, 5vw, 72px);
 }
 
-body.electric-repairs-page .electric-repair-modal__title {
+body.electric-repairs-page .electric-repair-modal__title,
+body.electric-diagram-page .electric-repair-modal__title {
   font-size: 18px;
   line-height: normal;
   text-decoration: underline;
@@ -1758,23 +1761,32 @@ body.electric-repairs-page .electric-repair-modal__filter-trigger.is-active {
   outline-offset: 2px;
 }
 
-body.electric-repairs-page .electric-repairs-page__list-shell {
+body.electric-repairs-page .electric-repairs-page__list-shell,
+body.electric-diagram-page .electric-diagram-models__list-shell {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   grid-template-areas: "list rail";
   align-items: start;
   gap: clamp(16px, 3vw, 40px);
   margin-top: clamp(8px, 1.2vw, 16px);
+  padding-inline: clamp(20px, 5vw, 72px);
 }
 
 body.electric-repairs-page
   .electric-repairs-page__list-shell
+  .electric-repair-modal__list,
+body.electric-diagram-page
+  .electric-diagram-models__list-shell
   .electric-repair-modal__list {
   grid-area: list;
   margin-top: 0;
 }
 
-body.electric-repairs-page .electric-repair-modal__list a {
+body.electric-repairs-page .electric-repair-modal__list a,
+body.electric-diagram-page
+  .electric-diagram-models__list-shell
+  .electric-repair-modal__list
+  a {
   font-size: 18px;
   font-weight: 500;
   line-height: normal;
@@ -1783,11 +1795,20 @@ body.electric-repairs-page .electric-repair-modal__list a {
 }
 
 body.electric-repairs-page .electric-repair-modal__list a:hover,
-body.electric-repairs-page .electric-repair-modal__list a:focus-visible {
+body.electric-repairs-page .electric-repair-modal__list a:focus-visible,
+body.electric-diagram-page
+  .electric-diagram-models__list-shell
+  .electric-repair-modal__list
+  a:hover,
+body.electric-diagram-page
+  .electric-diagram-models__list-shell
+  .electric-repair-modal__list
+  a:focus-visible {
   text-decoration: underline;
 }
 
-body.electric-repairs-page .electric-repair-modal__search {
+body.electric-repairs-page .electric-repair-modal__search,
+body.electric-diagram-page .electric-repair-modal__search {
   background: transparent;
   min-height: 34px;
   padding: 0 10px;
@@ -1797,17 +1818,20 @@ body.electric-repairs-page .electric-repair-modal__search {
   flex: 0 1 auto;
 }
 
-body.electric-repairs-page .electric-repair-modal__search img {
+body.electric-repairs-page .electric-repair-modal__search img,
+body.electric-diagram-page .electric-repair-modal__search img {
   width: calc(20px * 1.2);
   height: calc(20px * 1.2);
 }
 
-body.electric-repairs-page .electric-repair-modal__search-input {
+body.electric-repairs-page .electric-repair-modal__search-input,
+body.electric-diagram-page .electric-repair-modal__search-input {
   font-size: 16px;
   padding: 3px 0;
 }
 
-body.electric-repairs-page .electric-repair-modal__toolbar--repairs-rail {
+body.electric-repairs-page .electric-repair-modal__toolbar--repairs-rail,
+body.electric-diagram-page .electric-repair-modal__toolbar--repairs-rail {
   grid-area: rail;
   display: flex;
   justify-self: end;
@@ -1820,14 +1844,21 @@ body.electric-repairs-page .electric-repair-modal__toolbar--repairs-rail {
   max-width: 100%;
 }
 
-body.electric-repairs-page .electric-repair-modal__icon-btn {
+body.electric-repairs-page .electric-repair-modal__icon-btn,
+body.electric-diagram-page .electric-repair-modal__icon-btn {
   padding: 2px;
 }
 
-body.electric-repairs-page .electric-repair-modal__icon-btn img {
+body.electric-repairs-page .electric-repair-modal__icon-btn img,
+body.electric-diagram-page .electric-repair-modal__icon-btn img {
   display: block;
   width: auto;
   height: calc(22px * 1.2);
+}
+
+body.electric-diagram-page .electric-repair-modal__icon-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 
 .electric-repairs-cta {
@@ -1845,8 +1876,9 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(24px, 5vw, 56px);
   align-items: start;
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: min(1100px, 100%);
+  margin-left: 0;
+  margin-right: auto;
 }
 
 .electric-repairs-cta__copy {
@@ -2037,7 +2069,8 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
     flex-basis: 100%;
   }
 
-  body.electric-repairs-page .electric-repairs-page__list-shell {
+  body.electric-repairs-page .electric-repairs-page__list-shell,
+  body.electric-diagram-page .electric-diagram-models__list-shell {
     grid-template-columns: 1fr;
     grid-template-areas:
       "rail"
@@ -2045,7 +2078,8 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
     gap: clamp(12px, 2vw, 18px);
   }
 
-  body.electric-repairs-page .electric-repair-modal__toolbar--repairs-rail {
+  body.electric-repairs-page .electric-repair-modal__toolbar--repairs-rail,
+  body.electric-diagram-page .electric-repair-modal__toolbar--repairs-rail {
     justify-self: end;
     justify-content: flex-end;
     flex-wrap: wrap;
@@ -2054,6 +2088,9 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
   }
 
   body.electric-repairs-page
+    .electric-repair-modal__toolbar--repairs-rail
+    .electric-repair-modal__search,
+  body.electric-diagram-page
     .electric-repair-modal__toolbar--repairs-rail
     .electric-repair-modal__search {
     flex: 1 1 12rem;
@@ -2215,8 +2252,8 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: clamp(44px, 6vw, 56px);
-  height: clamp(44px, 6vw, 56px);
+  width: clamp(48px, 8vw, 56px);
+  height: clamp(48px, 8vw, 56px);
   padding: 0;
   border: none;
   border-radius: 12px;
@@ -2236,9 +2273,15 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
 
 .repair-detail__tool img {
   display: block;
-  width: 56%;
-  height: auto;
-  max-width: 36px;
+  width: clamp(26px, 4.6vw, 34px);
+  height: clamp(26px, 4.6vw, 34px);
+  max-width: none;
+  object-fit: contain;
+}
+
+.repair-detail__tool-icon--dislike {
+  transform: scale(1.1);
+  transform-origin: center center;
 }
 
 .repair-parts {
@@ -2302,25 +2345,6 @@ body.electric-repairs-page .electric-repair-modal__icon-btn img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* Packaging-style card (D’Addario ref): thin rule, generous inset, image contained */
-.repair-parts__img-wrap--strings {
-  border-width: 2px;
-  padding: clamp(20px, 4vw, 44px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-.repair-parts__img-wrap--strings img {
-  flex-shrink: 1;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
 }
 
 .repair-parts__name {
@@ -2696,26 +2720,22 @@ h2 {
   body.bass-page .page,
   body.electric-page .page,
   body.electric-repairs-page .page,
-  body.repair-detail-page .page {
+  body.repair-detail-page .page,
+  body.electric-diagram-page .page {
     padding: var(--top-nav-h) 16px 30px;
   }
 
   body.bass-page .top-nav,
   body.electric-page .top-nav,
   body.electric-repairs-page .top-nav,
-  body.repair-detail-page .top-nav {
+  body.repair-detail-page .top-nav,
+  body.electric-diagram-page .top-nav {
     padding-inline: 16px;
   }
 
   .top-nav {
     height: var(--top-nav-h);
     gap: 8px;
-  }
-
-  body.electric-repairs-page .page,
-  body.repair-detail-page .page {
-    padding-left: calc(16px + clamp(20px, 5vw, 72px));
-    padding-right: calc(16px + clamp(20px, 5vw, 72px));
   }
 
   .logo {

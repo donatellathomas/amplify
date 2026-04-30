@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — Bass</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260429bass-hero-mesh" />
+    <link rel="stylesheet" href="./styles.css?v=20260416flyout-cta" />
     <script
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
@@ -26,50 +26,117 @@
             <div class="nav-dropdown">
               <button
                 type="button"
-                class="nav-dropdown__trigger"
+                class="nav-dropdown__trigger nav-dropdown__trigger--hamburger"
                 aria-expanded="false"
                 aria-haspopup="true"
                 aria-controls="nav-instruments-menu"
                 id="nav-instruments-trigger"
+                aria-label="Instruments menu"
               >
-                Instruments
                 <svg
-                  class="nav-dropdown__chevron"
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
+                  class="nav-dropdown__hamburger"
+                  width="28"
+                  height="22"
+                  viewBox="0 0 28 22"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
                 >
                   <path
-                    d="M2.5 4.25 L6 7.75 L9.5 4.25"
+                    d="M2 5h24M2 11h24M2 17h24"
                     stroke="currentColor"
-                    stroke-width="1.4"
+                    stroke-width="2"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
                   />
                 </svg>
               </button>
-              <ul
-                class="nav-dropdown__menu"
+              <div
+                class="nav-flyout"
                 id="nav-instruments-menu"
-                role="menu"
                 aria-labelledby="nav-instruments-trigger"
               >
-                <li role="none">
-                  <a role="menuitem" href="./bass.html">Bass</a>
-                </li>
-                <li role="none">
-                  <a role="menuitem" href="#" class="nav-link--drums">Drums</a>
-                </li>
-                <li role="none">
-                  <a role="menuitem" href="#" class="nav-link--guitar">Guitar</a>
-                </li>
-                <li role="none">
-                  <a role="menuitem" href="#" class="nav-link--keys">Keys</a>
-                </li>
-              </ul>
+                <div class="nav-flyout__shadow nav-flyout__shadow--l1">
+                  <ul class="nav-flyout__menu">
+                    <li class="nav-flyout__tier">
+                      <button type="button" class="nav-flyout__hit">
+                        <span>Bass</span>
+                        <svg
+                          class="nav-flyout__chev"
+                          width="8"
+                          height="12"
+                          viewBox="0 0 8 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M1.5 1.5 L6 6 L1.5 10.5"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        class="nav-flyout__shadow nav-flyout__shadow--l2"
+                        role="group"
+                        aria-label="Bass models"
+                      >
+                        <ul class="nav-flyout__menu">
+                          <li class="nav-flyout__tier">
+                            <div class="nav-flyout__hit nav-flyout__hit--split">
+                              <a href="./bass-electric.html">Electric</a>
+                              <svg
+                                class="nav-flyout__chev"
+                                width="8"
+                                height="12"
+                                viewBox="0 0 8 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  d="M1.5 1.5 L6 6 L1.5 10.5"
+                                  stroke="currentColor"
+                                  stroke-width="1.6"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                            <div
+                              class="nav-flyout__shadow nav-flyout__shadow--l3"
+                              role="group"
+                              aria-label="Electric bass"
+                            >
+                              <ul class="nav-flyout__menu">
+                                <li>
+                                  <a href="./bass-electric-repairs.html"
+                                    >Repair</a
+                                  >
+                                </li>
+                                <li>
+                                  <a
+                                    href="./bass-electric.html#electric-diagram-repair"
+                                    >Diagram</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><a href="./bass.html">Acoustic</a></li>
+                          <li><a href="./bass.html">Double</a></li>
+                          <li><a href="./bass.html">Fretless</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li><a href="#" class="nav-link--drums">Drums</a></li>
+                    <li><a href="#" class="nav-link--guitar">Guitar</a></li>
+                    <li><a href="#" class="nav-link--keys">Keys</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </nav>
           <img
@@ -80,31 +147,24 @@
         </div>
       </header>
 
-      <section class="bass-hero bass-hero--svg" aria-label="Bass">
+      <section class="bass-hero bass-hero--video" aria-label="Bass">
         <div class="bass-hero__media panel">
-          <div class="bass-hero__mesh" aria-hidden="true">
-            <span class="bass-hero__mesh-blob bass-hero__mesh-blob--a"></span>
-            <span class="bass-hero__mesh-blob bass-hero__mesh-blob--b"></span>
-            <span class="bass-hero__mesh-blob bass-hero__mesh-blob--c"></span>
-            <span class="bass-hero__mesh-blob bass-hero__mesh-blob--d"></span>
-          </div>
-          <div class="bass-hero__mesh-front" aria-hidden="true">
-            <span class="bass-hero__mesh-front-blob bass-hero__mesh-front-blob--a"></span>
-            <span class="bass-hero__mesh-front-blob bass-hero__mesh-front-blob--b"></span>
-          </div>
-          <div class="bass-hero__frame bass-hero__frame--svg">
-            <img
-              class="bass-hero__svg-img"
-              src="./assets/bass-hero-asset-8.svg"
-              alt="Bass illustration"
-              width="636"
-              height="815"
-              loading="eager"
-              decoding="async"
-            />
+          <div class="bass-hero__frame bass-hero__frame--video">
+            <video
+              class="bass-hero__video"
+              src="./assets/moving-mesh-bass.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+              preload="auto"
+              disablepictureinpicture
+              disableremoteplayback
+              aria-label="Animated mesh gradient"
+            ></video>
+            <h1 class="bass-hero__title">The Bass Guitar</h1>
           </div>
         </div>
-        <p id="bass-hero-caption" class="bass-hero__header">Amplify Bass</p>
       </section>
 
       <nav class="bass-showcase" aria-label="Bass categories">
@@ -232,155 +292,101 @@
         <h2 id="bass-timeline-heading" class="bass-timeline__heading">
           Timeline
         </h2>
-        <div class="bass-timeline__strip">
-          <article class="timeline-mile timeline-mile--up">
-            <div class="timeline-mile__near">
-              <span class="timeline-mile__title">1900s — Upright tradition</span>
-              <p class="timeline-mile__text">
-                Used in orchestras and early jazz. Large, acoustic, and difficult to
-                transport.
-              </p>
-            </div>
-            <div class="timeline-mile__rail">
-              <span class="timeline-mile__dot"></span>
-            </div>
-            <div class="timeline-mile__far">
-              <figure class="timeline-mile__fig">
-                <img
-                  class="timeline-mile__img"
-                  src="./assets/timeline/timeline-1900s.png"
-                  alt=""
-                  width="520"
-                  height="320"
-                  loading="lazy"
-                />
-              </figure>
-            </div>
-          </article>
+        <div
+          class="bass-timeline__carousel"
+          role="region"
+          aria-label="Bass timeline milestones"
+        >
+          <button
+            type="button"
+            class="bass-timeline__nav bass-timeline__nav--prev"
+            aria-controls="bass-timeline-strip"
+            aria-label="Show earlier milestones"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M14 18l-6-6 6-6 1.4 1.4-4.6 4.6 4.6 4.6L14 18z"
+              />
+            </svg>
+          </button>
+          <div
+            id="bass-timeline-strip"
+            class="bass-timeline__strip"
+            tabindex="0"
+          >
+            <article class="timeline-mile">
+              <div class="timeline-mile__body">
+                <span class="timeline-mile__title">1900s: Upright tradition</span>
+                <p class="timeline-mile__text">
+                  Used in orchestras and early jazz. Large, acoustic, and difficult to
+                  transport.
+                </p>
+              </div>
+            </article>
 
-          <article class="timeline-mile timeline-mile--down">
-            <div class="timeline-mile__near">
-              <span class="timeline-mile__title">1930s–40s — Early experiments</span>
-              <p class="timeline-mile__text">
-                Experimenting with electrified bass instruments. Paul Tutmarc invented
-                the Audiovox Model 736.
-              </p>
-            </div>
-            <div class="timeline-mile__rail">
-              <span class="timeline-mile__dot"></span>
-            </div>
-            <div class="timeline-mile__far">
-              <figure class="timeline-mile__fig">
-                <img
-                  class="timeline-mile__img"
-                  src="./assets/timeline/timeline-1930s.png"
-                  alt=""
-                  width="520"
-                  height="320"
-                  loading="lazy"
-                />
-              </figure>
-            </div>
-          </article>
+            <article class="timeline-mile">
+              <div class="timeline-mile__body">
+                <span class="timeline-mile__title">1930s–40s: Early experiments</span>
+                <p class="timeline-mile__text">
+                  Experimenting with electrified bass instruments. Paul Tutmarc invented
+                  the Audiovox Model 736.
+                </p>
+              </div>
+            </article>
 
-          <article class="timeline-mile timeline-mile--up">
-            <div class="timeline-mile__near">
-              <span class="timeline-mile__title">1951 — Precision era</span>
-              <p class="timeline-mile__text">
-                First mass produced electric bass (the P-Bass). Quickly adopted in rock,
-                country, and early pop.
-              </p>
-            </div>
-            <div class="timeline-mile__rail">
-              <span class="timeline-mile__dot"></span>
-            </div>
-            <div class="timeline-mile__far">
-              <figure class="timeline-mile__fig">
-                <img
-                  class="timeline-mile__img"
-                  src="./assets/timeline/timeline-1951.png"
-                  alt=""
-                  width="520"
-                  height="320"
-                  loading="lazy"
-                />
-              </figure>
-            </div>
-          </article>
+            <article class="timeline-mile">
+              <div class="timeline-mile__body">
+                <span class="timeline-mile__title">1951: Precision era</span>
+                <p class="timeline-mile__text">
+                  First mass produced electric bass (the P-Bass). Quickly adopted in rock,
+                  country, and early pop.
+                </p>
+              </div>
+            </article>
 
-          <article class="timeline-mile timeline-mile--down">
-            <div class="timeline-mile__near">
-              <span class="timeline-mile__title">Late 50s–60s — On every stage</span>
-              <p class="timeline-mile__text">
-                Fender released Jazz Bass. Bass became essential across all music
-                genres.
-              </p>
-            </div>
-            <div class="timeline-mile__rail">
-              <span class="timeline-mile__dot"></span>
-            </div>
-            <div class="timeline-mile__far">
-              <figure class="timeline-mile__fig">
-                <img
-                  class="timeline-mile__img"
-                  src="./assets/timeline/timeline-late50s60s.png"
-                  alt=""
-                  width="520"
-                  height="320"
-                  loading="lazy"
-                />
-              </figure>
-            </div>
-          </article>
+            <article class="timeline-mile">
+              <div class="timeline-mile__body">
+                <span class="timeline-mile__title">Late 50s–60s: On every stage</span>
+                <p class="timeline-mile__text">
+                  Fender released Jazz Bass. Bass became essential across all music
+                  genres.
+                </p>
+              </div>
+            </article>
 
-          <article class="timeline-mile timeline-mile--up">
-            <div class="timeline-mile__near">
-              <span class="timeline-mile__title">1970s–80s — Tones diversify</span>
-              <p class="timeline-mile__text">
-                Powered pickups and active electronics. Musicians creating new
-                techniques.
-              </p>
-            </div>
-            <div class="timeline-mile__rail">
-              <span class="timeline-mile__dot"></span>
-            </div>
-            <div class="timeline-mile__far">
-              <figure class="timeline-mile__fig">
-                <img
-                  class="timeline-mile__img"
-                  src="./assets/timeline/timeline-1970s80s.png"
-                  alt=""
-                  width="520"
-                  height="320"
-                  loading="lazy"
-                />
-              </figure>
-            </div>
-          </article>
+            <article class="timeline-mile">
+              <div class="timeline-mile__body">
+                <span class="timeline-mile__title">1970s–80s: Tones diversify</span>
+                <p class="timeline-mile__text">
+                  Powered pickups and active electronics. Musicians creating new
+                  techniques.
+                </p>
+              </div>
+            </article>
 
-          <article class="timeline-mile timeline-mile--down">
-            <div class="timeline-mile__near">
-              <span class="timeline-mile__title">1990s onward — Modern low end</span>
-              <p class="timeline-mile__text">
-                Integrating technology. Vast communities. New bass models.
-              </p>
-            </div>
-            <div class="timeline-mile__rail">
-              <span class="timeline-mile__dot"></span>
-            </div>
-            <div class="timeline-mile__far">
-              <figure class="timeline-mile__fig">
-                <img
-                  class="timeline-mile__img"
-                  src="./assets/timeline/timeline-1990s.png"
-                  alt=""
-                  width="520"
-                  height="320"
-                  loading="lazy"
-                />
-              </figure>
-            </div>
-          </article>
+            <article class="timeline-mile">
+              <div class="timeline-mile__body">
+                <span class="timeline-mile__title">1990's-Current</span>
+                <p class="timeline-mile__text">
+                  Integrating technology. Vast communities. New bass models.
+                </p>
+              </div>
+            </article>
+          </div>
+          <button
+            type="button"
+            class="bass-timeline__nav bass-timeline__nav--next"
+            aria-controls="bass-timeline-strip"
+            aria-label="Show later milestones"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M10 18l6-6-6-6-1.4 1.4 4.6 4.6-4.6 4.6L10 18z"
+              />
+            </svg>
+          </button>
         </div>
       </section>
 
@@ -403,7 +409,7 @@
           <h3>Bass</h3>
           <ul>
             <li>Models</li>
-            <li>Repairs</li>
+            <li><a href="./bass-electric-repairs.html">Repairs</a></li>
             <li>Problems</li>
             <li>Forum</li>
           </ul>
@@ -439,29 +445,19 @@
         </section>
       </footer>
     </main>
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="0"
-      height="0"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <defs>
-        <filter
-          id="timeline-img-duotone"
-          color-interpolation-filters="sRGB"
-        >
-          <feColorMatrix
-            in="SourceGraphic"
-            type="matrix"
-            values="0.25 0.15 0.05 0 0  0.1 0.35 0.25 0 0  0.05 0.2 0.85 0 0  0 0 0 1 0"
-          />
-        </filter>
-      </defs>
-    </svg>
     <script type="module">
       const models = document.querySelectorAll(".bass-page__model");
       const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const heroVideo = document.querySelector(".bass-hero__video");
+
+      function syncHeroVideo() {
+        if (!heroVideo) return;
+        if (mq.matches) {
+          heroVideo.pause();
+        } else {
+          heroVideo.play?.().catch(() => {});
+        }
+      }
 
       function syncBassMv() {
         for (const mv of models) {
@@ -475,7 +471,49 @@
       }
 
       syncBassMv();
-      mq.addEventListener("change", syncBassMv);
+      syncHeroVideo();
+      mq.addEventListener("change", () => {
+        syncBassMv();
+        syncHeroVideo();
+      });
+
+      const timelineStrip = document.getElementById("bass-timeline-strip");
+      const timelinePrev = document.querySelector(".bass-timeline__nav--prev");
+      const timelineNext = document.querySelector(".bass-timeline__nav--next");
+
+      function timelineScrollAmount() {
+        if (!timelineStrip) return 0;
+        const first = timelineStrip.querySelector(".timeline-mile");
+        if (!first) return Math.round(timelineStrip.clientWidth * 0.85);
+        const gap =
+          Number.parseFloat(getComputedStyle(timelineStrip).columnGap) ||
+          Number.parseFloat(getComputedStyle(timelineStrip).gap) ||
+          0;
+        return Math.round(first.getBoundingClientRect().width + gap);
+      }
+
+      function scrollTimelineStrip(direction) {
+        if (!timelineStrip) return;
+        const step = timelineScrollAmount();
+        if (!step) return;
+        timelineStrip.scrollBy({
+          left: step * direction,
+          behavior: mq.matches ? "auto" : "smooth",
+        });
+      }
+
+      timelinePrev?.addEventListener("click", () => scrollTimelineStrip(-1));
+      timelineNext?.addEventListener("click", () => scrollTimelineStrip(1));
+
+      timelineStrip?.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          scrollTimelineStrip(-1);
+        } else if (e.key === "ArrowRight") {
+          e.preventDefault();
+          scrollTimelineStrip(1);
+        }
+      });
 
       const electricMv = document.querySelector(".bass-showcase__mv--electric");
       const electricUrl = "./bass-electric.html";
@@ -527,6 +565,8 @@
         );
       }
     </script>
+    <script src="./js/nav-instruments-dropdown.js"></script>
+    <script src="./js/no-widows.js"></script>
     <script src="./js/footer-message.js"></script>
   </body>
 </html>

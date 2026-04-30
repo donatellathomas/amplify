@@ -3,15 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Amplify — Electric Bass</title>
+    <title>Amplify — Electric Bass Repairs</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
     <link rel="stylesheet" href="./styles.css?v=20260416flyout-cta" />
-    <script
-      type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
-    ></script>
   </head>
-  <body class="electric-page">
+  <body class="electric-repairs-page">
     <main class="page">
       <header class="top-nav">
         <a href="./index.html">
@@ -148,129 +144,129 @@
       </header>
 
       <section
-        class="electric-hero electric-hero--video"
-        aria-labelledby="electric-hero-heading"
+        id="electric-repairs-root"
+        class="electric-repairs-main"
+        aria-labelledby="electric-repair-title"
       >
-        <h1 id="electric-hero-heading" class="electric-hero__sr-title">
-          The Electric
-        </h1>
-        <div class="electric-hero__media panel">
-          <div class="electric-hero__frame electric-hero__frame--video">
-            <svg
-              class="electric-hero__mask-defs"
-              aria-hidden="true"
-              focusable="false"
-              width="0"
-              height="0"
-            >
-              <defs>
-                <mask
-                  id="electric-hero-video-mask"
-                  maskUnits="objectBoundingBox"
-                  maskContentUnits="objectBoundingBox"
-                >
-                  <rect width="1" height="1" fill="black" />
-                  <!-- Uniform glyph proportions: bbox maps to a wide rect; scale X by H/W (~623/1588). -->
-                  <g
-                    transform="translate(0.5, 0.52) scale(0.392316, 1) translate(-0.5, -0.52)"
-                  >
-                    <text
-                      x="0.5"
-                      y="0.52"
-                      fill="white"
-                      text-anchor="middle"
-                      dominant-baseline="middle"
-                      font-family="Record Laser, Georgia, serif"
-                      font-weight="700"
-                      font-style="italic"
-                      font-size="0.2"
-                    >
-                      The Electric
-                    </text>
-                  </g>
-                </mask>
-              </defs>
-            </svg>
-            <video
-              class="electric-hero__video"
-              src="./assets/moving-mesh-bass.mp4"
-              autoplay
-              loop
-              muted
-              playsinline
-              preload="auto"
-              disablepictureinpicture
-              disableremoteplayback
-              aria-hidden="true"
-            ></video>
-          </div>
-        </div>
-      </section>
-
-      <div class="electric-intro-band">
-        <hr class="divider divider--electric-after-hero" aria-hidden="true" />
-
-        <section class="electric-intro" aria-label="Introduction">
-          <div class="electric-intro__layout">
-            <div class="electric-intro__text">
-              <p class="electric-intro__lead">
-                Below you will find diagrams and repair options for a variety of
-                electric bass models. Don&apos;t see your model? Can&apos;t find the
-                solution to your repair need? Submit a request to our team!
-              </p>
+        <div
+          class="electric-repair-modal__dialog electric-repair-modal__dialog--page"
+        >
+          <header class="electric-repair-modal__header">
+            <h1 id="electric-repair-title" class="electric-repair-modal__title">
+              Repairs List
+            </h1>
+            <div class="electric-repair-modal__toolbar">
+              <label class="electric-repair-modal__search">
+                <img
+                  src="./assets/electric-repair/search-icon.svg"
+                  alt=""
+                  width="16"
+                  height="16"
+                  decoding="async"
+                />
+                <input
+                  type="search"
+                  class="electric-repair-modal__search-input"
+                  placeholder="Search..."
+                  autocomplete="off"
+                  aria-label="Search repairs"
+                />
+              </label>
+              <button
+                type="button"
+                class="electric-repair-modal__icon-btn"
+                aria-label="Filter"
+              >
+                <img
+                  src="./assets/electric-repair/filter-icon.svg"
+                  alt=""
+                  width="18"
+                  height="18"
+                  decoding="async"
+                />
+              </button>
+              <button
+                type="button"
+                class="electric-repair-modal__icon-btn"
+                aria-label="Sort"
+              >
+                <img
+                  src="./assets/electric-repair/sort-icon.svg"
+                  alt=""
+                  width="20"
+                  height="20"
+                  decoding="async"
+                />
+              </button>
+              <a
+                href="./bass-electric.html"
+                class="electric-repair-modal__close electric-repair-modal__close--link"
+                aria-label="Back to Electric Bass"
+                >Back</a
+              >
             </div>
-            <figure class="electric-intro__figure">
-              <model-viewer
-                class="electric-intro__model"
-                src="./assets/BassGuitar03.glb"
-                alt="3D electric bass guitar"
-                orientation="-88deg 3deg -90deg"
-                camera-orbit="18deg 78deg auto"
-                min-camera-orbit="-Infinity 45deg auto"
-                max-camera-orbit="Infinity 95deg auto"
-                shadow-intensity="0.2"
-                exposure="1.2"
-                environment-image="./assets/bass-reflection-env.png"
-                tone-mapping="commerce"
-                interaction-prompt="none"
-              ></model-viewer>
-            </figure>
-          </div>
-        </section>
-
-        <hr class="divider divider--electric-after-intro" aria-hidden="true" />
-      </div>
-
-      <section
-        id="electric-diagram-repair"
-        class="electric-detail panel"
-        aria-label="Diagram and Repair"
-      >
-        <div class="electric-detail__mesh" aria-hidden="true">
-          <video
-            class="electric-detail__mesh-video"
-            src="./assets/moving-mesh-bass.mp4"
-            autoplay
-            loop
-            muted
-            playsinline
-            preload="auto"
-            disablepictureinpicture
-            disableremoteplayback
-          ></video>
-        </div>
-        <div class="electric-detail__grid">
-          <div class="electric-detail__col electric-detail__col--diagram">
-            <h2 class="electric-detail__heading">Diagram</h2>
-          </div>
-          <div class="electric-detail__col electric-detail__col--repair">
-            <a
-              class="electric-detail__heading electric-detail__heading--repair"
-              href="./bass-electric-repairs.html"
-            >
-              Repair
-            </a>
-          </div>
+          </header>
+          <ul class="electric-repair-modal__list">
+            <li><a href="#">String Change*</a></li>
+            <li><a href="#">Tightening Input Jack*</a></li>
+            <li><a href="#">Off Intonation*</a></li>
+            <li><a href="#">Fret Buzzing**</a></li>
+            <li><a href="#">High Action**</a></li>
+            <li><a href="#">Scratchy Pots**</a></li>
+            <li><a href="#">Pick up height imbalance**</a></li>
+            <li><a href="#">Broken Soldier Joint***</a></li>
+            <li><a href="#">Warped Neck***</a></li>
+            <li><a href="#">Fret Leveling***</a></li>
+          </ul>
+          <section
+            class="electric-repairs-cta"
+            aria-labelledby="electric-repairs-cta-heading"
+          >
+            <div class="electric-repairs-cta__inner">
+              <div class="electric-repairs-cta__copy">
+                <h2
+                  id="electric-repairs-cta-heading"
+                  class="electric-repairs-cta__title"
+                >
+                  Don't see your model?
+                </h2>
+                <p class="electric-repairs-cta__subtitle">Submit a request!</p>
+                <h3 class="electric-repairs-cta__how">How it works</h3>
+                <p class="electric-repairs-cta__body">
+                  Our talented team of designers, engineers, and music
+                  enthusiasts will begin the process of supplying your model.
+                  Once the model has been populated on the site, an email will
+                  be sent to your inbox from the Amplify team.
+                </p>
+              </div>
+              <form class="electric-repairs-cta__form" action="#" method="post">
+                <label class="visually-hidden" for="electric-repairs-cta-email"
+                  >Email</label
+                >
+                <input
+                  id="electric-repairs-cta-email"
+                  class="electric-repairs-cta__input"
+                  type="email"
+                  name="email"
+                  autocomplete="email"
+                  placeholder="Enter your email..."
+                />
+                <label class="visually-hidden" for="electric-repairs-cta-msg"
+                  >Model request</label
+                >
+                <textarea
+                  id="electric-repairs-cta-msg"
+                  class="electric-repairs-cta__textarea"
+                  name="request"
+                  rows="5"
+                  placeholder="Request a model..."
+                ></textarea>
+                <button class="electric-repairs-cta__submit" type="submit">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </section>
         </div>
       </section>
 
@@ -327,91 +323,7 @@
         </section>
       </footer>
     </main>
-    <script type="module">
-      const heroVideo = document.querySelector(".electric-hero__video");
-      const detailMeshVideo = document.querySelector(
-        ".electric-detail__mesh-video"
-      );
-      const introMv = document.querySelector(".electric-intro__model");
-      const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-      /** Baseline pose (must match initial `orientation` on the element). */
-      const INTRO_MV_BASE = { x: -88, y: 3, z: -90 };
-      /** Degrees per second — same nominal speed as former rotation-per-second. */
-      const INTRO_MV_SPIT_DPS = 26.325;
-
-      let introSpitRaf = 0;
-      let introSpitAngle = 0;
-      let introSpitLastTs = 0;
-
-      function stopIntroSpit() {
-        if (introSpitRaf) {
-          cancelAnimationFrame(introSpitRaf);
-          introSpitRaf = 0;
-        }
-        introSpitLastTs = 0;
-      }
-
-      function introSpitFrame(ts) {
-        if (!introMv || mq.matches) {
-          introSpitRaf = 0;
-          return;
-        }
-
-        if (!introSpitLastTs) introSpitLastTs = ts;
-        const dt = Math.min(ts - introSpitLastTs, 64);
-        introSpitLastTs = ts;
-
-        introSpitAngle =
-          (introSpitAngle + (INTRO_MV_SPIT_DPS * dt) / 1000) % 360;
-
-        /* Spit-roast: advance X Euler component (see model-viewer XYZ degrees). */
-        introMv.setAttribute(
-          "orientation",
-          `${INTRO_MV_BASE.x + introSpitAngle}deg ${INTRO_MV_BASE.y}deg ${INTRO_MV_BASE.z}deg`
-        );
-
-        introSpitRaf = requestAnimationFrame(introSpitFrame);
-      }
-
-      function startIntroSpit() {
-        if (!introMv || mq.matches) return;
-        stopIntroSpit();
-        introSpitRaf = requestAnimationFrame(introSpitFrame);
-      }
-
-      function syncElectricVideos() {
-        if (mq.matches) {
-          heroVideo?.pause();
-          detailMeshVideo?.pause();
-        } else {
-          heroVideo?.play?.().catch(() => {});
-          detailMeshVideo?.play?.().catch(() => {});
-        }
-      }
-
-      function syncElectricIntroModel() {
-        if (!introMv) return;
-        introMv.removeAttribute("auto-rotate");
-        if (mq.matches) {
-          stopIntroSpit();
-          introMv.setAttribute(
-            "orientation",
-            `${INTRO_MV_BASE.x}deg ${INTRO_MV_BASE.y}deg ${INTRO_MV_BASE.z}deg`
-          );
-        } else {
-          startIntroSpit();
-        }
-      }
-
-      function syncElectricPageMotion() {
-        syncElectricVideos();
-        syncElectricIntroModel();
-      }
-
-      syncElectricPageMotion();
-      mq.addEventListener("change", syncElectricPageMotion);
-    </script>
+    <script src="./js/electric-repairs-list.js"></script>
     <script src="./js/nav-instruments-dropdown.js"></script>
     <script src="./js/no-widows.js"></script>
     <script src="./js/footer-message.js"></script>

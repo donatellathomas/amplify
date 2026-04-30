@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260416about-plain-crop" />
+    <link rel="stylesheet" href="./styles.css?v=20260416flyout-cta" />
     <script
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
@@ -26,50 +26,117 @@
             <div class="nav-dropdown">
               <button
                 type="button"
-                class="nav-dropdown__trigger"
+                class="nav-dropdown__trigger nav-dropdown__trigger--hamburger"
                 aria-expanded="false"
                 aria-haspopup="true"
                 aria-controls="nav-instruments-menu"
                 id="nav-instruments-trigger"
+                aria-label="Instruments menu"
               >
-                Instruments
                 <svg
-                  class="nav-dropdown__chevron"
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
+                  class="nav-dropdown__hamburger"
+                  width="28"
+                  height="22"
+                  viewBox="0 0 28 22"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
                 >
                   <path
-                    d="M2.5 4.25 L6 7.75 L9.5 4.25"
+                    d="M2 5h24M2 11h24M2 17h24"
                     stroke="currentColor"
-                    stroke-width="1.4"
+                    stroke-width="2"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
                   />
                 </svg>
               </button>
-              <ul
-                class="nav-dropdown__menu"
+              <div
+                class="nav-flyout"
                 id="nav-instruments-menu"
-                role="menu"
                 aria-labelledby="nav-instruments-trigger"
               >
-                <li role="none">
-                  <a role="menuitem" href="./bass.html">Bass</a>
-                </li>
-                <li role="none">
-                  <a role="menuitem" href="#" class="nav-link--drums">Drums</a>
-                </li>
-                <li role="none">
-                  <a role="menuitem" href="#" class="nav-link--guitar">Guitar</a>
-                </li>
-                <li role="none">
-                  <a role="menuitem" href="#" class="nav-link--keys">Keys</a>
-                </li>
-              </ul>
+                <div class="nav-flyout__shadow nav-flyout__shadow--l1">
+                  <ul class="nav-flyout__menu">
+                    <li class="nav-flyout__tier">
+                      <button type="button" class="nav-flyout__hit">
+                        <span>Bass</span>
+                        <svg
+                          class="nav-flyout__chev"
+                          width="8"
+                          height="12"
+                          viewBox="0 0 8 12"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M1.5 1.5 L6 6 L1.5 10.5"
+                            stroke="currentColor"
+                            stroke-width="1.6"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        class="nav-flyout__shadow nav-flyout__shadow--l2"
+                        role="group"
+                        aria-label="Bass models"
+                      >
+                        <ul class="nav-flyout__menu">
+                          <li class="nav-flyout__tier">
+                            <div class="nav-flyout__hit nav-flyout__hit--split">
+                              <a href="./bass-electric.html">Electric</a>
+                              <svg
+                                class="nav-flyout__chev"
+                                width="8"
+                                height="12"
+                                viewBox="0 0 8 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                              >
+                                <path
+                                  d="M1.5 1.5 L6 6 L1.5 10.5"
+                                  stroke="currentColor"
+                                  stroke-width="1.6"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                />
+                              </svg>
+                            </div>
+                            <div
+                              class="nav-flyout__shadow nav-flyout__shadow--l3"
+                              role="group"
+                              aria-label="Electric bass"
+                            >
+                              <ul class="nav-flyout__menu">
+                                <li>
+                                  <a href="./bass-electric-repairs.html"
+                                    >Repair</a
+                                  >
+                                </li>
+                                <li>
+                                  <a
+                                    href="./bass-electric.html#electric-diagram-repair"
+                                    >Diagram</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><a href="./bass.html">Acoustic</a></li>
+                          <li><a href="./bass.html">Double</a></li>
+                          <li><a href="./bass.html">Fretless</a></li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li><a href="#" class="nav-link--drums">Drums</a></li>
+                    <li><a href="#" class="nav-link--guitar">Guitar</a></li>
+                    <li><a href="#" class="nav-link--keys">Keys</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </nav>
           <img
@@ -190,44 +257,6 @@
 
       <hr class="divider divider--home-instruments" aria-hidden="true" />
 
-      <section class="about" aria-labelledby="about-heading">
-        <div class="about__layout">
-          <div class="about__col about__col--text">
-            <h2 id="about-heading">About</h2>
-            <p>
-              This project explores the development of affordable instrument care and
-              accessible music education. The brand aims to educate musicians about
-              maintenance through clear visual language, straightforward instructional
-              content, and cost-conscious solutions designed for musicians at every
-              level.
-            </p>
-            <p>
-              By combining education with practical resources, the project emphasizes
-              longevity, sustainability, and empowerment. Which in turn helps
-              musicians better understand, care for, and connect with their
-              instruments.
-            </p>
-          </div>
-          <div class="about__col about__col--cross">
-            <figure class="about-photo-wrap panel">
-              <div class="about-photo">
-                <img
-                  class="about-photo__img"
-                  src="./assets/amplify-about-band-photo.png?v=bw-pano"
-                  alt="Black-and-white photo of a four-piece band performing outdoors at night"
-                  width="1024"
-                  height="682"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <hr class="divider divider--home-after-about" aria-hidden="true" />
-
       <footer class="footer">
         <section>
           <h3>Contact Us</h3>
@@ -245,7 +274,7 @@
           <h3>Bass</h3>
           <ul>
             <li>Models</li>
-            <li>Repairs</li>
+            <li><a href="./bass-electric-repairs.html">Repairs</a></li>
             <li>Problems</li>
             <li>Forum</li>
           </ul>
@@ -301,6 +330,8 @@
       syncGallerySpin();
       mq.addEventListener("change", syncGallerySpin);
     </script>
+    <script src="./js/nav-instruments-dropdown.js"></script>
+    <script src="./js/no-widows.js"></script>
     <script src="./js/footer-message.js"></script>
   </body>
 </html>

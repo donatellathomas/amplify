@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — Electric Bass</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260428electric-aside-noshadow" />
+    <link rel="stylesheet" href="./styles.css?v=20260416top-nav-end" />
   </head>
   <body class="electric-page">
     <main class="page">
@@ -17,17 +17,63 @@
             alt="Amplify"
           />
         </a>
-        <nav class="links" aria-label="Main navigation">
-          <a href="./bass.html">Bass</a>
-          <a href="#" class="nav-link--guitar">Guitar</a>
-          <a href="#" class="nav-link--drums">Drums</a>
-          <a href="#" class="nav-link--keys">Keys</a>
-        </nav>
-        <img
-          class="account"
-          src="./assets/figma/account-icon.svg"
-          alt="Account"
-        />
+        <div class="top-nav__end">
+          <nav class="links" aria-label="Main navigation">
+            <div class="nav-dropdown">
+              <button
+                type="button"
+                class="nav-dropdown__trigger"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="nav-instruments-menu"
+                id="nav-instruments-trigger"
+              >
+                Instruments
+                <svg
+                  class="nav-dropdown__chevron"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2.5 4.25 L6 7.75 L9.5 4.25"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="nav-dropdown__menu"
+                id="nav-instruments-menu"
+                role="menu"
+                aria-labelledby="nav-instruments-trigger"
+              >
+                <li role="none">
+                  <a role="menuitem" href="./bass.html">Bass</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="#" class="nav-link--drums">Drums</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="#" class="nav-link--guitar">Guitar</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="#" class="nav-link--keys">Keys</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <img
+            class="account"
+            src="./assets/figma/account-icon.svg"
+            alt="Account"
+          />
+        </div>
       </header>
 
       <section

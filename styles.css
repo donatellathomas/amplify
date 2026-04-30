@@ -17,6 +17,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: "cofo-sans-variable", system-ui, sans-serif;
+  font-size: 20px;
 }
 
 /* Bass page — no sideways page scroll (scaled models / wide strips) */
@@ -45,6 +46,7 @@ body.bass-page {
   gap: 16px;
   height: 76px;
   background: var(--bg);
+  overflow: visible;
 }
 
 /*
@@ -77,17 +79,103 @@ body.electric-page .page {
   transform: translateY(10%);
 }
 
-.links {
-  flex: 1;
-  min-width: 0;
+.top-nav__end {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 40px;
-  padding-inline-start: clamp(56px, 16vw, 280px);
+  gap: clamp(14px, 2.4vw, 22px);
+  margin-inline-start: auto;
+  flex-shrink: 0;
 }
 
-.links a {
+.links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  min-width: 0;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  padding: 4px 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: var(--heading-space);
+  color: #ededed;
+  text-decoration: underline;
+  line-height: 1.2;
+}
+
+.nav-dropdown__trigger:hover {
+  color: #ffffff;
+}
+
+.nav-dropdown__trigger:focus {
+  outline: none;
+}
+
+.nav-dropdown__trigger:focus-visible {
+  color: #ffffff;
+  outline: 2px solid #ededed;
+  outline-offset: 4px;
+}
+
+.nav-dropdown__chevron {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.nav-dropdown__menu {
+  position: absolute;
+  left: auto;
+  right: 0;
+  top: calc(100% + 8px);
+  margin: 0;
+  min-width: min(240px, calc(100vw - 48px));
+  padding: 10px 0;
+  list-style: none;
+  background: #1a1a1a;
+  border: 1px solid rgba(237, 237, 237, 0.22);
+  border-radius: 10px;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0.18s;
+  z-index: 220;
+}
+
+.nav-dropdown:hover .nav-dropdown__menu,
+.nav-dropdown:focus-within .nav-dropdown__menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-dropdown__menu li {
+  margin: 0;
+}
+
+.links .nav-dropdown__menu a {
+  display: block;
+  padding: 10px 20px;
   color: #ededed;
   text-decoration: underline;
   font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
@@ -96,22 +184,28 @@ body.electric-page .page {
   font-weight: 500;
 }
 
-.links a[href*="bass"]:hover {
+.links .nav-dropdown__menu a:hover,
+.links .nav-dropdown__menu a:focus-visible {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.links .nav-dropdown__menu a[href*="bass"]:hover,
+.links .nav-dropdown__menu a[href*="bass"]:focus-visible {
   color: #00f0ff;
 }
 
-.links a.nav-link--guitar:hover,
-.links a.nav-link--guitar:focus-visible {
+.links .nav-dropdown__menu a.nav-link--guitar:hover,
+.links .nav-dropdown__menu a.nav-link--guitar:focus-visible {
   color: #2bff88;
 }
 
-.links a.nav-link--drums:hover,
-.links a.nav-link--drums:focus-visible {
+.links .nav-dropdown__menu a.nav-link--drums:hover,
+.links .nav-dropdown__menu a.nav-link--drums:focus-visible {
   color: #ff7a00;
 }
 
-.links a.nav-link--keys:hover,
-.links a.nav-link--keys:focus-visible {
+.links .nav-dropdown__menu a.nav-link--keys:hover,
+.links .nav-dropdown__menu a.nav-link--keys:focus-visible {
   color: #d15cff;
 }
 
@@ -119,7 +213,6 @@ body.electric-page .page {
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  margin-inline-start: auto;
 }
 
 .panel {
@@ -179,14 +272,13 @@ body.electric-page .page {
   padding: clamp(22px, 4.5vw, 44px) clamp(20px, 5vw, 72px)
     clamp(28px, 5vw, 52px);
   border-radius: 28px;
-  background: #ff7a00;
-  color: #fff;
+  background: transparent;
+  color: #ededed;
   font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
   font-size: clamp(21px, 3vw, 34px);
   font-weight: 500;
   letter-spacing: var(--heading-space);
   line-height: 1.22;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
 }
 
 .hero img,
@@ -204,21 +296,26 @@ body.electric-page .page {
   background: var(--muted);
 }
 
-/* Home: gradient pill strips (gallery → About, About → footer) */
+/* Home: simple horizontal rules (hero → gallery, gallery → About, About → footer) */
+.divider.divider--home-after-hero,
 .divider.divider--home-instruments,
-.divider.divider--home-after-about {
+.divider.divider--home-after-about,
+.divider.divider--bass-strip {
   padding: 0;
-  border: none;
+  border: 0;
   border-radius: 0;
   width: min(100%, min(1728px, calc(100vw - 40px)));
   margin-left: auto;
   margin-right: auto;
-  height: auto;
-  max-height: none;
+  height: 2px;
   display: block;
-  background: transparent;
-  object-fit: contain;
-  object-position: center;
+  background: #ededed;
+  color: #ededed;
+  opacity: 1;
+}
+
+.divider.divider--home-after-hero {
+  margin: clamp(18px, 3.5vw, 40px) 0 clamp(20px, 3.8vw, 44px);
 }
 
 .divider.divider--home-instruments {
@@ -229,21 +326,9 @@ body.electric-page .page {
   margin: clamp(14px, 2.8vw, 32px) 0 clamp(24px, 4.5vw, 44px);
 }
 
-/* Bass page cyan pill divider strips */
+/* Bass page: horizontal rules (same as home) */
 .divider.divider--bass-strip {
   margin: clamp(28px, 5vw, 56px) 0 clamp(22px, 4vw, 44px);
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  width: min(100%, min(1728px, calc(100vw - 40px)));
-  margin-left: auto;
-  margin-right: auto;
-  height: auto;
-  max-height: none;
-  display: block;
-  background: transparent;
-  object-fit: contain;
-  object-position: center;
 }
 
 .bass-showcase + .divider.divider--bass-strip-before-history {
@@ -384,13 +469,16 @@ body.electric-page .page {
   pointer-events: none;
 }
 
-body.bass-page .bass-hero.bass-hero--photo {
+body.bass-page .bass-hero.bass-hero--photo,
+body.bass-page .bass-hero.bass-hero--svg {
   overflow: visible;
   background: transparent;
   border-radius: 0;
 }
 
-body.bass-page .bass-hero--photo .bass-hero__media {
+body.bass-page .bass-hero--photo .bass-hero__media,
+body.bass-page .bass-hero--svg .bass-hero__media {
+  position: relative;
   overflow: hidden;
   background: #000;
   border-radius: 50px;
@@ -401,7 +489,226 @@ body.bass-page .bass-hero--photo .bass-hero__img {
   transform: none;
 }
 
+/* Animated mesh gradient (SVG hero): depth layer + subtle wash over art */
+body.bass-page .bass-hero--svg .bass-hero__mesh {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse 120% 90% at 50% 80%,
+    #0a1628 0%,
+    #000 62%
+  );
+}
+
+body.bass-page .bass-hero--svg .bass-hero__mesh-blob {
+  position: absolute;
+  width: min(78%, 920px);
+  height: min(85%, 560px);
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: 0.72;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  will-change: transform;
+}
+
+body.bass-page .bass-hero--svg .bass-hero__mesh-blob--a {
+  left: -18%;
+  top: -22%;
+  background: radial-gradient(
+    circle at 40% 45%,
+    rgba(0, 240, 255, 0.95) 0%,
+    rgba(0, 240, 255, 0) 68%
+  );
+  animation: bass-hero-mesh-a 22s ease-in-out infinite;
+}
+
+body.bass-page .bass-hero--svg .bass-hero__mesh-blob--b {
+  right: -24%;
+  top: 8%;
+  background: radial-gradient(
+    circle at 55% 50%,
+    rgba(209, 92, 255, 0.85) 0%,
+    rgba(209, 92, 255, 0) 65%
+  );
+  animation: bass-hero-mesh-b 26s ease-in-out infinite;
+}
+
+body.bass-page .bass-hero--svg .bass-hero__mesh-blob--c {
+  left: 8%;
+  bottom: -35%;
+  width: min(88%, 980px);
+  background: radial-gradient(
+    circle at 50% 40%,
+    rgba(43, 255, 136, 0.55) 0%,
+    rgba(43, 255, 136, 0) 70%
+  );
+  animation: bass-hero-mesh-c 19s ease-in-out infinite;
+}
+
+body.bass-page .bass-hero--svg .bass-hero__mesh-blob--d {
+  left: 28%;
+  top: 18%;
+  width: min(65%, 720px);
+  height: min(70%, 440px);
+  opacity: 0.45;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 122, 0, 0.65) 0%,
+    rgba(255, 122, 0, 0) 72%
+  );
+  animation: bass-hero-mesh-d 15s ease-in-out infinite;
+}
+
+body.bass-page .bass-hero--svg .bass-hero__mesh-front {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+body.bass-page .bass-hero--svg .bass-hero__mesh-front-blob {
+  position: absolute;
+  width: min(95%, 1100px);
+  height: min(90%, 520px);
+  border-radius: 50%;
+  filter: blur(56px);
+  opacity: 0.22;
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+  will-change: transform;
+}
+
+body.bass-page .bass-hero--svg .bass-hero__mesh-front-blob--a {
+  left: -10%;
+  top: 20%;
+  background: radial-gradient(
+    circle at 45% 42%,
+    rgba(0, 240, 255, 1) 0%,
+    transparent 62%
+  );
+  animation: bass-hero-mesh-fa 14s ease-in-out infinite alternate;
+}
+
+body.bass-page .bass-hero--svg .bass-hero__mesh-front-blob--b {
+  right: -12%;
+  bottom: -8%;
+  background: radial-gradient(
+    circle at 50% 55%,
+    rgba(209, 92, 255, 0.95) 0%,
+    transparent 58%
+  );
+  animation: bass-hero-mesh-fb 17s ease-in-out infinite alternate;
+}
+
+@keyframes bass-hero-mesh-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  35% {
+    transform: translate(12%, 10%) scale(1.12);
+  }
+  68% {
+    transform: translate(-6%, 18%) scale(0.94);
+  }
+}
+
+@keyframes bass-hero-mesh-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1.05);
+  }
+  40% {
+    transform: translate(-14%, 8%) scale(1.18);
+  }
+  72% {
+    transform: translate(-4%, -12%) scale(0.9);
+  }
+}
+
+@keyframes bass-hero-mesh-c {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  45% {
+    transform: translate(16%, -14%) scale(1.08);
+  }
+  80% {
+    transform: translate(-10%, -6%) scale(1.02);
+  }
+}
+
+@keyframes bass-hero-mesh-d {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.38;
+  }
+  50% {
+    transform: translate(20%, 22%) scale(1.25);
+    opacity: 0.58;
+  }
+}
+
+@keyframes bass-hero-mesh-fa {
+  0% {
+    transform: translate(-6%, 4%) scale(1);
+    opacity: 0.16;
+  }
+  100% {
+    transform: translate(14%, -10%) scale(1.35);
+    opacity: 0.32;
+  }
+}
+
+@keyframes bass-hero-mesh-fb {
+  0% {
+    transform: translate(8%, -6%) scale(1.08);
+    opacity: 0.12;
+  }
+  100% {
+    transform: translate(-18%, 12%) scale(1.22);
+    opacity: 0.28;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.bass-page .bass-hero--svg .bass-hero__mesh-blob,
+  body.bass-page .bass-hero--svg .bass-hero__mesh-front-blob {
+    animation: none !important;
+  }
+}
+
+body.bass-page .bass-hero--svg .bass-hero__frame--svg {
+  position: relative;
+  z-index: 1;
+  aspect-ratio: 1588 / 623;
+  max-height: min(623px, 70vh);
+  overflow: hidden;
+}
+
+/* Portrait SVG rotated −90°; scaled to cover full hero (like object-fit: cover) */
+body.bass-page .bass-hero--svg .bass-hero__svg-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: auto;
+  height: 298%;
+  max-width: none;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  transform-origin: center center;
+  pointer-events: none;
+}
+
 body.bass-page .bass-hero--photo .bass-hero__header,
+body.bass-page .bass-hero--svg .bass-hero__header,
 body.electric-page .electric-hero .bass-hero__header {
   margin: clamp(12px, 2vw, 22px) 0 0;
   padding: 0 clamp(20px, 5vw, 72px);
@@ -417,6 +724,11 @@ body.electric-page .electric-hero .bass-hero__header {
 @media (max-width: 700px) {
   body.bass-page .bass-hero--photo .bass-hero__img {
     object-position: 45% 38%;
+  }
+
+  body.bass-page .bass-hero--svg .bass-hero__svg-img {
+    height: 272%;
+    transform: translate(-50%, -50%) rotate(-90deg);
   }
 }
 
@@ -571,7 +883,7 @@ body.electric-page .electric-hero .bass-hero__header {
 .bass-history__text p {
   margin: 0 0 6px;
   max-width: 48ch;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.8;
   text-wrap: pretty;
   hyphens: auto;
@@ -684,7 +996,7 @@ body.electric-page .electric-hero .bass-hero__header {
   display: block;
   margin-bottom: 0.35em;
   font-family: "cofo-sans-mono-variable", ui-monospace, monospace;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: var(--heading-space);
   line-height: 1.8;
@@ -694,7 +1006,7 @@ body.electric-page .electric-hero .bass-hero__header {
 .timeline-mile__text {
   margin: 0;
   font-family: "cofo-sans-variable", system-ui, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.8;
   text-wrap: pretty;
   hyphens: auto;
@@ -805,7 +1117,7 @@ body.electric-page .electric-hero.electric-hero--figma.panel {
   margin: 0;
   max-width: 48ch;
   font-family: "cofo-sans-variable", system-ui, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.95);
@@ -865,7 +1177,7 @@ body.electric-page .electric-hero.electric-hero--figma.panel {
   margin: 0 0 6px;
   max-width: 48ch;
   font-family: "cofo-sans-variable", system-ui, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 400;
   line-height: 1.8;
   color: rgba(8, 28, 58, 0.95);
@@ -931,7 +1243,7 @@ body.electric-page .electric-hero.electric-hero--figma.panel {
   margin: 0 0 0.85em;
   max-width: 62ch;
   font-family: "cofo-sans-variable", system-ui, sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.8;
   color: var(--text);
   text-wrap: pretty;
@@ -1089,40 +1401,40 @@ h2 {
   min-width: 0;
 }
 
-.about-cross {
-  position: relative;
+/* Panoramic viewport (~818:418); B&W source cropped via object-fit; no matte */
+.about-photo-wrap {
+  margin: 0;
   width: 100%;
-  max-width: min(440px, 92vw);
-  aspect-ratio: 1;
+  max-width: min(680px, 100%);
   margin-inline: auto;
-  overflow: visible;
-}
-
-.about-cross__mv {
-  --poster-color: transparent;
-  position: absolute;
-  left: 50%;
-  top: 56%;
-  width: min(100%, 380px);
-  height: clamp(260px, 32vw, 400px);
-  max-width: none;
-  border: none;
+  padding: 0;
   background: transparent;
-  pointer-events: none;
-  user-select: none;
-  transform-origin: center center;
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
+  box-shadow: none;
 }
 
-.about-cross__mv--bass {
-  z-index: 1;
-  transform: translate(-50%, -50%) rotate(-42deg) scale(1.2);
+.about-photo-wrap.panel {
+  overflow: hidden;
+  border-radius: 2px;
 }
 
-.about-cross__mv--guitar {
-  z-index: 2;
-  transform: translate(calc(-50% - clamp(28px, 6vw, 56px)), -50%) rotate(42deg)
-    scale(1.2);
+.about-photo {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 818 / 418;
+  overflow: hidden;
+  border-radius: 2px;
+  background: transparent;
+}
+
+.about-photo__img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 44%;
 }
 
 @media (max-width: 900px) {
@@ -1133,7 +1445,7 @@ h2 {
 
   .about__col--cross {
     order: 1;
-    max-width: min(400px, 100%);
+    max-width: min(640px, 100%);
     margin-inline: auto;
   }
 
@@ -1145,7 +1457,7 @@ h2 {
 .about p {
   margin: 0 0 6px;
   max-width: 48ch;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.8;
   text-wrap: pretty;
   hyphens: auto;
@@ -1174,7 +1486,7 @@ h2 {
 .footer p,
 .footer li {
   margin: 0;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.8;
   list-style: none;
 }
@@ -1218,9 +1530,13 @@ h2 {
     gap: 10px;
   }
 
-  .links a {
+  .links .nav-dropdown__menu a {
     font-size: 18px;
     letter-spacing: var(--heading-space);
+  }
+
+  .nav-dropdown__trigger {
+    font-size: 18px;
   }
 
   .account {
@@ -1243,6 +1559,32 @@ h2 {
     height: 54px;
     margin: 22px 0;
     border-radius: 13px;
+  }
+
+  .divider.divider--home-after-hero,
+  .divider.divider--home-instruments,
+  .divider.divider--home-after-about,
+  .divider.divider--bass-strip {
+    height: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0;
+    background: #ededed;
+  }
+
+  .divider.divider--home-after-hero {
+    margin-top: clamp(14px, 3vw, 28px);
+    margin-bottom: clamp(16px, 3.2vw, 32px);
+  }
+
+  .divider.divider--home-instruments {
+    margin-top: clamp(20px, 4vw, 40px);
+    margin-bottom: clamp(10px, 2vw, 16px);
+  }
+
+  .divider.divider--home-after-about {
+    margin-top: clamp(12px, 2.5vw, 24px);
+    margin-bottom: clamp(20px, 4vw, 36px);
   }
 
   .media:not(.media--drum):not(.media--guitar):not(.media--bass):not(
@@ -1275,7 +1617,7 @@ h2 {
   }
 
   .about p {
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.8;
     max-width: 480px;
   }
@@ -1293,7 +1635,7 @@ h2 {
 
   .footer p,
   .footer li {
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.5;
   }
 

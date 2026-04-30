@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery instrument — PNG export</title>
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
+    ></script>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        background: #121212;
+        color: #ededed;
+        font-family: system-ui, sans-serif;
+      }
+      .hint {
+        max-width: 44rem;
+        padding: 0 16px;
+        font-size: 14px;
+        line-height: 1.5;
+        text-align: center;
+      }
+      code {
+        font-size: 13px;
+      }
+      model-viewer#mv {
+        width: min(1024px, 96vw);
+        height: min(1024px, 96vw);
+        background: #121212;
+      }
+      button {
+        padding: 10px 18px;
+        font-size: 15px;
+        cursor: pointer;
+        border-radius: 8px;
+        border: 1px solid #444;
+        background: #1e1e1e;
+        color: #fff;
+      }
+      button:hover {
+        border-color: #00f0ff;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="hint">
+      Query:
+      <code>?model=drum</code>,
+      <code>?model=guitar</code>, or
+      <code>?model=keys</code>
+      (matches homepage gallery + reflection env). Serve repo root via HTTP.
+    </p>
+    <model-viewer
+      id="mv"
+      alt=""
+      camera-orbit="0deg 75deg auto"
+      min-camera-orbit="-Infinity 75deg 70%"
+      max-camera-orbit="Infinity 75deg 140%"
+      interaction-prompt="none"
+      tone-mapping="commerce"
+    ></model-viewer>
+    <button type="button" id="download">Download PNG</button>
+    <script type="module">
+      const PRESETS = {
+        drum: {
+          src: "./assets/Drum02.glb",
+          env: "./assets/drum-reflection-env.png",
+          orientation: "3deg 5deg 0deg",
+          filename: "Drum02-reflection.png",
+        },
+        guitar: {
+          src: "./assets/Guitar02.glb",
+          env: "./assets/guitar-reflection-env.png",
+          orientation: null,
+          filename: "Guitar02-reflection.png",
+        },
+        keys: {
+          src: "./assets/Keys.glb",
+          env: "./assets/keys-reflection-env.png",
+          orientation: null,
+          filename: "Keys-reflection.png",
+        },
+      };
+
+      await customElements.whenDefined("model-viewer");
+
+      const params = new URLSearchParams(location.search);
+      const key = params.get("model") || "drum";
+      const preset = PRESETS[key];
+      if (!preset) {
+        document.body.innerHTML =
+          "<p style=\"padding:24px\">Unknown model. Use ?model=drum|guitar|keys</p>";
+        throw new Error("Unknown model");
+      }
+
+      const mv = document.getElementById("mv");
+      mv.src = preset.src;
+      mv.setAttribute("environment-image", preset.env);
+      mv.setAttribute("shadow-intensity", "0.2");
+      mv.setAttribute("exposure", "1.2");
+      if (preset.orientation) {
+        mv.setAttribute("orientation", preset.orientation);
+      }
+
+      document.title = preset.filename.replace(".png", "") + " — export";
+
+      const btn = document.getElementById("download");
+
+      async function downloadPng() {
+        await mv.loaded;
+        await mv.updateComplete;
+        await new Promise((r) =>
+          requestAnimationFrame(() => requestAnimationFrame(r))
+        );
+        const blob = await mv.toBlob({
+          mimeType: "image/png",
+          idealAspect: false,
+        });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = preset.filename;
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+
+      btn.addEventListener("click", () => {
+        downloadPng().catch((err) => {
+          console.error(err);
+          alert("Export failed — use a local server (not file://).");
+        });
+      });
+    </script>
+  </body>
+</html>

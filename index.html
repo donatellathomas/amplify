@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260416restore" />
+    <link rel="stylesheet" href="./styles.css?v=20260416about-plain-crop" />
     <script
       type="module"
       src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
@@ -21,17 +21,63 @@
             alt="Amplify"
           />
         </a>
-        <nav class="links" aria-label="Main navigation">
-          <a href="./bass.html">Bass</a>
-          <a href="#" class="nav-link--guitar">Guitar</a>
-          <a href="#" class="nav-link--drums">Drums</a>
-          <a href="#" class="nav-link--keys">Keys</a>
-        </nav>
-        <img
-          class="account"
-          src="./assets/figma/account-icon.svg"
-          alt="Account"
-        />
+        <div class="top-nav__end">
+          <nav class="links" aria-label="Main navigation">
+            <div class="nav-dropdown">
+              <button
+                type="button"
+                class="nav-dropdown__trigger"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="nav-instruments-menu"
+                id="nav-instruments-trigger"
+              >
+                Instruments
+                <svg
+                  class="nav-dropdown__chevron"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M2.5 4.25 L6 7.75 L9.5 4.25"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <ul
+                class="nav-dropdown__menu"
+                id="nav-instruments-menu"
+                role="menu"
+                aria-labelledby="nav-instruments-trigger"
+              >
+                <li role="none">
+                  <a role="menuitem" href="./bass.html">Bass</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="#" class="nav-link--drums">Drums</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="#" class="nav-link--guitar">Guitar</a>
+                </li>
+                <li role="none">
+                  <a role="menuitem" href="#" class="nav-link--keys">Keys</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <img
+            class="account"
+            src="./assets/figma/account-icon.svg"
+            alt="Account"
+          />
+        </div>
       </header>
 
       <section class="hero panel">
@@ -54,6 +100,8 @@
           Musicians for Musicians
         </p>
       </section>
+
+      <hr class="divider divider--home-after-hero" aria-hidden="true" />
 
       <section class="gallery">
         <div class="gallery__cell">
@@ -140,15 +188,7 @@
         </div>
       </section>
 
-      <img
-        class="divider divider--home-instruments"
-        src="./assets/figma/Mask group.png"
-        alt=""
-        width="1636"
-        height="59"
-        loading="lazy"
-        decoding="async"
-      />
+      <hr class="divider divider--home-instruments" aria-hidden="true" />
 
       <section class="about" aria-labelledby="about-heading">
         <div class="about__layout">
@@ -169,50 +209,24 @@
             </p>
           </div>
           <div class="about__col about__col--cross">
-            <div class="about-cross">
-              <model-viewer
-                class="about-cross__mv about-cross__mv--bass"
-                src="./assets/BassGuitar03.glb"
-                alt="Electric bass guitar"
-                tabindex="-1"
-                orientation="0deg 90deg 0deg"
-                camera-orbit="12deg 88deg 112%"
-                min-camera-orbit="12deg 88deg 112%"
-                max-camera-orbit="12deg 88deg 112%"
-                shadow-intensity="0.2"
-                exposure="1.2"
-                environment-image="./assets/bass-reflection-env.png"
-                tone-mapping="commerce"
-                interaction-prompt="none"
-              ></model-viewer>
-              <model-viewer
-                class="about-cross__mv about-cross__mv--guitar"
-                src="./assets/Guitar02.glb"
-                alt="Acoustic guitar"
-                tabindex="-1"
-                camera-orbit="-16deg 90deg 110%"
-                min-camera-orbit="-16deg 90deg 110%"
-                max-camera-orbit="-16deg 90deg 110%"
-                shadow-intensity="0.2"
-                exposure="1.2"
-                environment-image="./assets/guitar-reflection-env.png"
-                tone-mapping="commerce"
-                interaction-prompt="none"
-              ></model-viewer>
-            </div>
+            <figure class="about-photo-wrap panel">
+              <div class="about-photo">
+                <img
+                  class="about-photo__img"
+                  src="./assets/amplify-about-band-photo.png?v=bw-pano"
+                  alt="Black-and-white photo of a four-piece band performing outdoors at night"
+                  width="1024"
+                  height="682"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            </figure>
           </div>
         </div>
       </section>
 
-      <img
-        class="divider divider--home-after-about"
-        src="./assets/figma/Mask group.png"
-        alt=""
-        width="1636"
-        height="59"
-        loading="lazy"
-        decoding="async"
-      />
+      <hr class="divider divider--home-after-about" aria-hidden="true" />
 
       <footer class="footer">
         <section>

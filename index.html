@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260430home-gallery-rule" />
-    <script
-      type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
-    ></script>
+    <link rel="stylesheet" href="./styles.css?v=20260529mv-fallback" />
+    <script type="module" src="./js/vendor/model-viewer.min.js"></script>
   </head>
   <body>
     <main class="page">
@@ -114,9 +111,18 @@
       </header>
 
       <section class="hero panel">
+        <img
+          class="hero__fallback"
+          data-mv-fallback
+          src="./assets/book/amplify-logo-3d.png"
+          alt=""
+          aria-hidden="true"
+          decoding="async"
+        />
         <model-viewer
           class="hero__model"
           src="./assets/AmplifyLogo.glb"
+          poster="./assets/book/amplify-logo-3d.png"
           alt="Amplify 3D logo"
           orientation="0deg 85deg 0deg"
           camera-orbit="0deg 75deg 105%"
@@ -135,9 +141,17 @@
       <section class="gallery">
         <div class="gallery__cell">
           <article class="panel media media--bass">
+            <img
+              class="media__fallback"
+              data-mv-fallback
+              src="./assets/exports/BassGuitar03-reflection.png"
+              alt="Electric bass guitar"
+              decoding="async"
+            />
             <model-viewer
               class="media--bass__model"
               src="./assets/BassGuitar03.glb"
+              poster="./assets/exports/BassGuitar03-reflection.png"
               alt="3D electric bass guitar"
               orientation="0deg 90deg 0deg"
               camera-orbit="0deg 75deg auto"
@@ -156,9 +170,17 @@
         </div>
         <div class="gallery__cell">
           <article class="panel media media--drum">
+            <img
+              class="media__fallback"
+              data-mv-fallback
+              src="./assets/figma/drum-hero-ref.jpg"
+              alt="Stylized orange drum illustration"
+              decoding="async"
+            />
             <model-viewer
               class="media--drum__model"
               src="./assets/Drum02.glb"
+              poster="./assets/exports/Drum02-reflection.png"
               alt="3D drum"
               orientation="3deg 5deg 0deg"
               camera-orbit="0deg 75deg auto"
@@ -177,9 +199,17 @@
         </div>
         <div class="gallery__cell">
           <article class="panel media media--guitar">
+            <img
+              class="media__fallback"
+              data-mv-fallback
+              src="./assets/figma/guitar-hero-ref.jpg"
+              alt="Stylized green acoustic guitar illustration"
+              decoding="async"
+            />
             <model-viewer
               class="media--guitar__model"
               src="./assets/Guitar02.glb"
+              poster="./assets/exports/Guitar02-reflection.png"
               alt="3D acoustic guitar"
               camera-orbit="0deg 75deg auto"
               min-camera-orbit="-Infinity 75deg 70%"
@@ -197,9 +227,17 @@
         </div>
         <div class="gallery__cell">
           <article class="panel media media--keys">
+            <img
+              class="media__fallback"
+              data-mv-fallback
+              src="./assets/exports/Keys-reflection.png"
+              alt="Keyboard instrument"
+              decoding="async"
+            />
             <model-viewer
               class="media--keys__model"
               src="./assets/Keys.glb"
+              poster="./assets/exports/Keys-reflection.png"
               alt="3D keys"
               camera-orbit="0deg 75deg auto"
               min-camera-orbit="-Infinity 75deg 70%"
@@ -278,6 +316,7 @@
         </section>
       </footer>
     </main>
+    <script type="module" src="./js/model-viewer-fallback.mjs"></script>
     <script type="module" src="./js/hero-model.mjs?v=20260416restore"></script>
     <script type="module">
       const guitar = document.querySelector(".media--guitar__model");

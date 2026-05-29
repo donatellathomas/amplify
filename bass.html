@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — Bass</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260416electric-diagram-nav" />
-    <script
-      type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
-    ></script>
+    <link rel="stylesheet" href="./styles.css?v=20260529mv-fallback" />
+    <script type="module" src="./js/vendor/model-viewer.min.js"></script>
   </head>
   <body class="bass-page">
     <main class="page">
@@ -137,6 +134,7 @@
         <model-viewer
           class="bass-showcase__mv bass-showcase__mv--electric bass-page__model"
           src="./assets/BassGuitar03.glb"
+          poster="./assets/exports/BassGuitar03-reflection.png"
           alt=""
           tabindex="0"
           role="link"
@@ -157,6 +155,7 @@
         <model-viewer
           class="bass-showcase__mv bass-showcase__mv--acoustic bass-page__model"
           src="./assets/AcousticBass.glb"
+          poster="./assets/book/bass-showcase-acoustic.png"
           alt="Acoustic bass preview"
           camera-orbit="0deg 75deg auto"
           min-camera-orbit="-Infinity 75deg 70%"
@@ -173,6 +172,7 @@
         <model-viewer
           class="bass-showcase__mv bass-showcase__mv--double bass-page__model"
           src="./assets/DoubleBass.glb"
+          poster="./assets/book/bass-showcase-double.png"
           alt="Double bass preview"
           camera-orbit="0deg 75deg auto"
           min-camera-orbit="-Infinity 75deg 70%"
@@ -189,6 +189,7 @@
         <model-viewer
           class="bass-showcase__mv bass-showcase__mv--fretless bass-page__model"
           src="./assets/Fretless.glb"
+          poster="./assets/book/bass-showcase-fretless.png"
           alt="Fretless bass preview"
           camera-orbit="0deg 75deg auto"
           min-camera-orbit="-Infinity 75deg 70%"
@@ -239,6 +240,7 @@
             <model-viewer
               class="bass-history__model"
               src="./assets/BassGuitar03.glb"
+              poster="./assets/exports/BassGuitar03-reflection.png"
               alt="Electric bass guitar model"
               orientation="-88deg 3deg -90deg"
               camera-orbit="18deg 78deg auto"
@@ -537,6 +539,7 @@
         );
       }
     </script>
+    <script type="module" src="./js/model-viewer-fallback.mjs"></script>
     <script src="./js/nav-instruments-dropdown.js"></script>
     <script src="./js/no-widows.js"></script>
     <script src="./js/footer-message.js"></script>

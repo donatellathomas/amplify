@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amplify — Electric Bass</title>
     <link rel="stylesheet" href="https://use.typekit.net/scp1tuo.css" />
-    <link rel="stylesheet" href="./styles.css?v=20260430electric-detail-gap-70" />
-    <script
-      type="module"
-      src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"
-    ></script>
+    <link rel="stylesheet" href="./styles.css?v=20260529mv-fallback" />
+    <script type="module" src="./js/vendor/model-viewer.min.js"></script>
   </head>
   <body class="electric-page">
     <main class="page">
@@ -147,6 +144,7 @@
               <model-viewer
                 class="electric-intro__model"
                 src="./assets/BassGuitar03.glb"
+                poster="./assets/exports/BassGuitar03-reflection.png"
                 alt="3D electric bass guitar"
                 orientation="-88deg 3deg -90deg"
                 camera-orbit="18deg 78deg auto"
@@ -260,6 +258,7 @@
         </section>
       </footer>
     </main>
+    <script type="module" src="./js/model-viewer-fallback.mjs"></script>
     <script type="module">
       const heroVideo = document.querySelector(".bass-hero__video");
       const detailMeshVideo = document.querySelector(

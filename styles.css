@@ -457,25 +457,12 @@ a.nav-flyout__hit {
   background: var(--bg);
 }
 
-.hero__fallback {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center 42%;
-  pointer-events: none;
-  transform: translateY(calc(clamp(44px, 7.5vw, 96px) * -1.3));
-  transform-origin: 50% 42%;
-}
-
 /* Breaks up 8-bit / IBL banding on the 3D logo without changing art direction */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 1;
   border-radius: inherit;
   pointer-events: none;
   opacity: 0.055;
@@ -487,8 +474,6 @@ a.nav-flyout__hit {
 .hero__model {
   position: relative;
   z-index: 0;
-  opacity: 0;
-  transition: opacity 0.35s ease;
   display: block;
   width: 100%;
   height: 108%;
@@ -500,10 +485,6 @@ a.nav-flyout__hit {
   user-select: none;
   transform: translateY(calc(clamp(44px, 7.5vw, 96px) * -1.3));
   transform-origin: 50% 42%;
-}
-
-.hero__model.is-ready {
-  opacity: 1;
 }
 
 .media img {
@@ -607,26 +588,11 @@ a.nav-flyout__hit {
   height: auto;
 }
 
-.media__fallback {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  display: block;
-  pointer-events: none;
-}
-
 .media--drum__model,
 .media--guitar__model,
 .media--bass__model,
 .media--keys__model {
   --poster-color: transparent;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.35s ease;
   display: block;
   width: 100%;
   height: 120%;
@@ -639,13 +605,6 @@ a.nav-flyout__hit {
   top: 54%;
   pointer-events: none;
   user-select: none;
-}
-
-.media--drum__model.is-ready,
-.media--guitar__model.is-ready,
-.media--bass__model.is-ready,
-.media--keys__model.is-ready {
-  opacity: 1;
 }
 
 .media--drum__model {
